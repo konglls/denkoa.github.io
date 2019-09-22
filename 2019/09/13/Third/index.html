@@ -286,6 +286,20 @@
               <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/09/13/Third/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/09/13/Third/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -299,12 +313,12 @@
         <h1 id="音频视频测试"><a href="#音频视频测试" class="headerlink" title="音频视频测试"></a>音频视频测试</h1><a id="more"></a>
 
 <h1 id="单曲"><a href="#单曲" class="headerlink" title="单曲"></a>单曲</h1>
-    <div id="aplayer-HXnzUZCj" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="16607987" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
+    <div id="aplayer-NNAuuHjc" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="16607987" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
 
 
 
 <h1 id="歌单"><a href="#歌单" class="headerlink" title="歌单"></a>歌单</h1>
-    <div id="aplayer-CGOctraR" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="2410118238" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
+    <div id="aplayer-GlqXSbJQ" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="2410118238" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
 
 
 
@@ -359,6 +373,9 @@
 
           </div>
           
+    
+    <div class="comments" id="comments"></div>
+  
 
         </div>
           
@@ -534,6 +551,31 @@
   
 
   
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: '5Pw8BH8LPOHjrogA8kdbGWRz-gzGzoHsz',
+    appKey: 'YegfaOwAW5jfTVE5Dl49Orll',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>
