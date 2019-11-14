@@ -3,7 +3,7 @@
   <entry>
     <title>后端蓝牙开发包bluecove 2.1.2版本</title>
     <url>/2019/11/14/%E5%90%8E%E7%AB%AF%E8%93%9D%E7%89%99%E5%BC%80%E5%8F%91%E5%8C%85bluecove-2-1-2%E7%89%88%E6%9C%AC/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>这几天跟老师要了上届学长写的代码参考学习，涉及到后端的蓝牙开发，用到了bluecove(net.sf.bluecove)，这个本来没什么问题，自己慢慢学就好了，有问题的是学长用的2.1.1版本，官方只提供到了2.1.0版本(<a href="https://search.maven.org/search?q=bluecove" target="_blank" rel="noopener">maven搜索引擎</a>，<a href="http://bluecove.org/" target="_blank" rel="noopener">官网</a>)，而其中的一个关键API( RemoteDeviceHelper.readRSSI，用来连续获取蓝牙设备的RSSI值)，官方版本中并没有提供。<a id="more"></a></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>这几天跟老师要了上届学长写的代码参考学习，涉及到后端的蓝牙开发，用到了net.sf.bluecove包，这个本来没什么问题，自己慢慢学就好了，有问题的是学长用的2.1.1版本，官方只提供到了2.1.0版本(<a href="https://search.maven.org/search?q=bluecove" target="_blank" rel="noopener">maven搜索引擎</a>，<a href="http://bluecove.org/" target="_blank" rel="noopener">官网</a>)，而其中的一个关键API( RemoteDeviceHelper.readRSSI，用来连续获取蓝牙设备的RSSI值)，官方版本中并没有提供。<a id="more"></a></p>
 <h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>试着换了几个官方版本都没有那个API，然后找资料，在这篇<a href="https://blog.csdn.net/old_me_mory/article/details/18962701" target="_blank" rel="noopener">博文</a>里看到了解决方法，然后顺着这条线索，终于找到了能用的版本2.1.2，也有<a href="http://snapshot.bluecove.org/distribution/download/2.1.1-SNAPSHOT/2.1.1-SNAPSHOT.62/" target="_blank" rel="noopener">2.1.1</a>版本，但无法下载。</p>
 <p>点此<a href="/downloadfiles/bluecove-2.1.2.jar">下载2.1.2版本</a>。</p>
 <p>另外复习下maven将本地jar包加入到本地仓库的命令</p>
@@ -145,12 +145,12 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="音频视频测试"><a href="#音频视频测试" class="headerlink" title="音频视频测试"></a>音频视频测试</h1><a id="more"></a>
 
 <h1 id="单曲"><a href="#单曲" class="headerlink" title="单曲"></a>单曲</h1>
-    <div id="aplayer-YGPGDdoO" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="16607987" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
+    <div id="aplayer-IBKRShHW" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="16607987" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
 
 
 
 <h1 id="歌单"><a href="#歌单" class="headerlink" title="歌单"></a>歌单</h1>
-    <div id="aplayer-BpagGxXs" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="2410118238" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
+    <div id="aplayer-qoVeRXgA" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="2410118238" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
 
 
 
