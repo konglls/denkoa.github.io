@@ -1,8 +1,8 @@
-http://www.kkmblog.com/2020/01/21/SpringBoot-mybatis-redis整合遇到的坑/
-http://www.kkmblog.com/2019/11/14/后端蓝牙开发包bluecove-2-1-2版本/
-http://www.kkmblog.com/2019/11/05/后端与移动端对接遇到的问题/
-http://www.kkmblog.com/2019/10/20/hexo文章同时部署到github和个人服务器/
-http://www.kkmblog.com/2019/09/27/Navicat-12-1-版本注册/
-http://www.kkmblog.com/2019/09/21/Hexo图片显示问题解决方法/
-http://www.kkmblog.com/2019/09/13/音视频测试/
-http://www.kkmblog.com/2019/09/12/AAAAA/
+https://www.kkmblog.com/2020/01/21/SpringBoot-mybatis-redis整合遇到的坑/
+https://www.kkmblog.com/2019/11/14/后端蓝牙开发包bluecove-2-1-2版本/
+https://www.kkmblog.com/2019/11/05/后端与移动端对接遇到的问题/
+https://www.kkmblog.com/2019/10/20/hexo文章同时部署到github和个人服务器/
+https://www.kkmblog.com/2019/09/27/Navicat-12-1-版本注册/
+https://www.kkmblog.com/2019/09/21/Hexo图片显示问题解决方法/
+https://www.kkmblog.com/2019/09/13/音视频测试/
+https://www.kkmblog.com/2019/09/12/AAAAA/
