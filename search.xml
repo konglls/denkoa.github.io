@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>SpringBoot+mybatis+redis整合遇到的坑</title>
-    <url>/2020/01/21/SpringBoot-mybatis-redis%E6%95%B4%E5%90%88%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/</url>
+    <url>//abbrlink.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
 <li>开发者工具</li>
 <li>Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration.</li>
@@ -31,7 +31,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(<span class="string">"xx.xx.xx.dao"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestApplication</span> </span>&#123;s</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(TestApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>原因：bean注入失败，启动类和相应的包名没在同一级目录下，注解@SpringBootApplication只能扫描同级目录下以及子目录下的包。以下是正确的：</p>
-<p><img src="/2020/01/21/SpringBoot-mybatis-redis整合遇到的坑/%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95.jpg" alt="目录"></p>
+<p><img src="/abbrlink.htm/%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95.jpg" alt="目录"></p>
 <p>如果经过上述过程还没解决，请看一下你的maven是不是在使用IDEA默认的，如果是请自己下一个，改为自己的，IDEA默认的maven可能会有版本问题——这是在一个论坛上看到的，因为已经过去了一段时间，所以找不到那个网页了。我就是因为这个原因整整卡了两天。</p>
 <h2 id="坑二：mybatis代码自动生成工具Exception-getting-JDBC-Driver"><a href="#坑二：mybatis代码自动生成工具Exception-getting-JDBC-Driver" class="headerlink" title="坑二：mybatis代码自动生成工具Exception getting JDBC Driver"></a>坑二：mybatis代码自动生成工具Exception getting JDBC Driver</h2><p>这个是在使用mybatis-generator工具时遇到的，一直报错找不到JDBC驱动类，之后网上搜需要在pom文件里将generator插件改为如下配置</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.generator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-generator-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--以下dependencies标签中的内容是添加的内容--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.18<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.generator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-generator-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">overwrite</span>&gt;</span>true<span class="tag">&lt;/<span class="name">overwrite</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">verbose</span>&gt;</span>true<span class="tag">&lt;/<span class="name">verbose</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">configurationFile</span>&gt;</span>src/main/resources/generatorConfig.xml<span class="tag">&lt;/<span class="name">configurationFile</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -67,7 +67,7 @@
   </entry>
   <entry>
     <title>后端蓝牙开发包bluecove 2.1.2版本</title>
-    <url>/2019/11/14/%E5%90%8E%E7%AB%AF%E8%93%9D%E7%89%99%E5%BC%80%E5%8F%91%E5%8C%85bluecove-2-1-2%E7%89%88%E6%9C%AC/</url>
+    <url>//abbrlink.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>这几天跟老师要了上届学长写的代码参考学习，涉及到后端的蓝牙开发，用到了net.sf.bluecove包，这个本来没什么问题，自己慢慢学就好了，有问题的是学长用的2.1.1版本，官方只提供到了2.1.0版本(<a href="https://search.maven.org/search?q=bluecove" target="_blank" rel="noopener">maven搜索引擎</a>，<a href="http://bluecove.org/" target="_blank" rel="noopener">官网</a>)，而其中的一个关键API( RemoteDeviceHelper.readRSSI，用来连续获取蓝牙设备的RSSI值)，官方版本中并没有提供。<a id="more"></a></p>
 <h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>试着换了几个官方版本都没有那个API，然后找资料，在这篇<a href="https://blog.csdn.net/old_me_mory/article/details/18962701" target="_blank" rel="noopener">博文</a>里看到了解决方法，然后顺着这条线索，终于找到了能用的版本2.1.2，也有<a href="http://snapshot.bluecove.org/distribution/download/2.1.1-SNAPSHOT/2.1.1-SNAPSHOT.62/" target="_blank" rel="noopener">2.1.1</a>版本，但无法下载。</p>
 <p>点此<a href="/downloadfiles/bluecove-2.1.2.jar">下载2.1.2版本</a>。</p>
@@ -94,7 +94,7 @@
   </entry>
   <entry>
     <title>后端与移动端对接遇到的问题</title>
-    <url>/2019/11/05/%E5%90%8E%E7%AB%AF%E4%B8%8E%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AF%B9%E6%8E%A5%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <url>//abbrlink.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>之前学后端一直是与Web页面交互，然后最近需要与移动度交互，有点陌生，就问学Android的同学是怎样交换数据的，他说根据url获取数据，json格式。感觉和Web的交互方式差不多，除了json格式，原先没用过。然后就看了下怎样用json交换数据，正好项目用的是ssm框架，@RequestBody和@ResponseBody可以实现json数据与实体类的相互转换，就偷了懒，反正只要key与属性名保持一致就行，还不用自己去拼接了。然后这几天与同学对接时遇到了问题，就测试登录，然后可以连上服务器，但一登陆就崩。不知道咋回事。之后，同学调试时发现得到了415错误，媒体类型不支持，相互确认都用了json传输接收数据，还是不行。<a id="more"></a></p>
 <h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>第二天又凑到一起搞这个时，突然发现我后端的后台有报错，也是媒体类型错误，同时报错不支持<code>Content-Type=application/x-www-form-urlencoded</code>，这才算知道问题出在了哪里，接收、发送数据的编码格式不对，我后端的代码要求的是<code>Content-Type=application/json</code>（貌似用了那两个注解也只能这样？），知道了问题在哪就好办了，不过也还是弄了一下午，因为同学用了不太熟悉的依赖，查了半天也不知道怎么设置，最终又改回了之前熟悉的才解决问题，不过还好，只是换依赖花的时间长，另外，他之前只是在写页面没有对数据进行处理，所以改动不是很大，不像我后端已经把数据搞好了，要改的话还得大改。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
@@ -129,9 +129,9 @@
 </tr>
 </tbody></table>
 <p>请求形式：（PS:请求不用这么麻烦，我这里是为了测试@RequestBody能否接受嵌套数据）</p>
-<p><img src="/2019/11/05/后端与移动端对接遇到的问题/%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82.png" alt="请求数据"></p>
+<p><img src="/abbrlink.htm/%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82.png" alt="请求数据"></p>
 <p>返回数据形式：</p>
-<p><img src="/2019/11/05/后端与移动端对接遇到的问题/%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE.png" alt="返回数据"></p>
+<p><img src="/abbrlink.htm/%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE.png" alt="返回数据"></p>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -143,7 +143,7 @@
   </entry>
   <entry>
     <title>hexo文章同时部署到github和个人服务器</title>
-    <url>/2019/10/20/hexo%E6%96%87%E7%AB%A0%E5%90%8C%E6%97%B6%E9%83%A8%E7%BD%B2%E5%88%B0github%E5%92%8C%E4%B8%AA%E4%BA%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <url>//abbrlink.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="具体情况"><a href="#具体情况" class="headerlink" title="具体情况"></a>具体情况</h2><p>之前这个博客网站一直在<a href="https://kuke-z.github.io" target="_blank" rel="noopener">Github(kuke-z.github.io)</a>上托管，这两天花钱买了域名<a href="https://kkmblog.com" target="_blank" rel="noopener">kkmblog.com</a>又买了空间，想着</p>
 <p>同时部署在GitHub和服务器上。具体服务器端环境搭建可参考这篇博文：<a href="https://www.pisho.com.cn/2018/12/18/CentOS7-Nginx-本地git-hexo建站过程/" target="_blank" rel="noopener">CentOS7+Nginx+本地git+hexo建站过程</a>。服务器端配置好后要从本地发布到服务器上遇到了问题，因为已经部署到过GitHub，所以全局_config.yml配置文件中deploy下的repo路径已经有了GitHub仓库的路径，不知道怎么添加服务器的路径。<a id="more"></a></p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>看了很多博客，都是在介绍如何用多台机器部署到同一个站点的解决方法，最终找到了<a href="https://www.cnblogs.com/compassblog/p/8922624.html" target="_blank" rel="noopener">这篇博文</a>，在设置路径时采用了如下方式：</p>
@@ -161,7 +161,7 @@
   </entry>
   <entry>
     <title>Navicat 12.1.*版本注册</title>
-    <url>/2019/09/27/Navicat-12-1-%E7%89%88%E6%9C%AC%E6%B3%A8%E5%86%8C/</url>
+    <url>//abbrlink.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>之前MySQL数据库可视化界面一直用的是MySQL Workbench，虽然知道Navicat Premium很好用，但一直不怎么爱折腾，就没搞这个，毕竟不是个免费软件用还得注册破解。今天数据库课上老师又提到了Navicat，就在课后下载下来试了试。以下是安装破解过程：<a id="more"></a></p>
 <blockquote>
 <p>首先在官网下载<a href="https://navicat.com.cn/download/navicat-premium" target="_blank" rel="noopener">试用</a>版本,安装；</p>
@@ -188,13 +188,13 @@
   </entry>
   <entry>
     <title>Hexo图片显示问题解决方法</title>
-    <url>/2019/09/21/Hexo%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <url>//abbrlink.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="不显示表现"><a href="#不显示表现" class="headerlink" title="不显示表现"></a>不显示表现</h2><p>根据网上教程装了<code>hexo-asset-image</code> ，图片路径正确，但图片仍然无法显示，前端调试器报错404。</p>
 <a id="more"></a>
 
 <h2 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h2><p>中间换过几个不同的版本，不能解决问题。</p>
 <p>然后是修改<code>hexo-asset-image</code> 的<a href="https://www.jianshu.com/p/3db6a61d3782" target="_blank" rel="noopener">data.permalink</a>同样不行。</p>
-<p>今天偶然看到一个关于<a href="https://blog.csdn.net/u014253173/article/details/81088518" target="_blank" rel="noopener">Hexo更新</a>文章，就在某种强迫症的心理作用下对Hexo进行了全局更新<code>npm i hexo-cli -g</code>，然后本地调试就神奇的发现图片可以显示了，再去看<code>hexo-asset-image</code>的<code>data.permalink</code>发现已经回到了默认状态，通过浏览器的前端调试器发现图片的url路径已经发生了变化这是更新后的路径：<img src="/2019/09/21/Hexo图片显示问题解决方法/%E6%9B%B4%E6%96%B0%E5%90%8E%E7%9A%84%E8%B7%AF%E5%BE%84.jpg" alt="更新后的">更新前的都是<code>src=&quot;a/5.jpg&quot;</code>。</p>
+<p>今天偶然看到一个关于<a href="https://blog.csdn.net/u014253173/article/details/81088518" target="_blank" rel="noopener">Hexo更新</a>文章，就在某种强迫症的心理作用下对Hexo进行了全局更新<code>npm i hexo-cli -g</code>，然后本地调试就神奇的发现图片可以显示了，再去看<code>hexo-asset-image</code>的<code>data.permalink</code>发现已经回到了默认状态，通过浏览器的前端调试器发现图片的url路径已经发生了变化这是更新后的路径：<img src="/abbrlink.htm/%E6%9B%B4%E6%96%B0%E5%90%8E%E7%9A%84%E8%B7%AF%E5%BE%84.jpg" alt="更新后的">更新前的都是<code>src=&quot;a/5.jpg&quot;</code>。</p>
 <p>至此，图片可以显示。</p>
 ]]></content>
       <categories>
@@ -206,16 +206,16 @@
   </entry>
   <entry>
     <title>音视频测试</title>
-    <url>/2019/09/13/%E9%9F%B3%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/</url>
+    <url>//abbrlink.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="音频视频测试"><a href="#音频视频测试" class="headerlink" title="音频视频测试"></a>音频视频测试</h1><a id="more"></a>
 
 <h1 id="单曲"><a href="#单曲" class="headerlink" title="单曲"></a>单曲</h1>
-    <div id="aplayer-krqqoyuM" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="16607987" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
+    <div id="aplayer-ahDWAdNu" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="16607987" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
 
 
 
 <h1 id="歌单"><a href="#歌单" class="headerlink" title="歌单"></a>歌单</h1>
-    <div id="aplayer-YqzbDoqm" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="2410118238" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
+    <div id="aplayer-utglJsra" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="2410118238" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
 
 
 
@@ -230,7 +230,7 @@
   </entry>
   <entry>
     <title>AAAAA</title>
-    <url>/2019/09/12/AAAAA/</url>
+    <url>//abbrlink.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="a"><a href="#a" class="headerlink" title="a"></a>a</h1><p>second blog.</p>
 <h2 id="b"><a href="#b" class="headerlink" title="b"></a>b</h2><a id="more"></a>
 
@@ -241,7 +241,7 @@
 <blockquote>
 <p>daadfa</p>
 </blockquote>
-<p><img src="/2019/09/12/AAAAA/5.jpg" alt="成龙"></p>
+<p><img src="/abbrlink.htm/5.jpg" alt="成龙"></p>
 <p><strong>ASDF</strong></p>
 <p><em>asd</em></p>
 <table>
