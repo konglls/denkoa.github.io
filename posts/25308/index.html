@@ -60,17 +60,17 @@
 <meta name="keywords" content="Java,SpringBoot,mybatis,redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot+mybatis+redis整合遇到的坑">
-<meta property="og:url" content="https://www.kkmblog.com/posts/25308.html">
+<meta property="og:url" content="https://www.kkmblog.com/posts/25308/index.html">
 <meta property="og:site_name" content="kkm&#39;s Blog">
 <meta property="og:description" content="目录 开发者工具 Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration. mybatis代码自动生成工具Exception getting JDBC Driver 数据存入redis 序列化的问题 maven执行install时自动运行mybatis-generator插件">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://www.kkmblog.com/posts/25308.htm/%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95.jpg">
+<meta property="og:image" content="https://www.kkmblog.com/posts/25308/%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95.jpg">
 <meta property="og:updated_time" content="2020-02-16T19:01:07.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot+mybatis+redis整合遇到的坑">
 <meta name="twitter:description" content="目录 开发者工具 Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration. mybatis代码自动生成工具Exception getting JDBC Driver 数据存入redis 序列化的问题 maven执行install时自动运行mybatis-generator插件">
-<meta name="twitter:image" content="https://www.kkmblog.com/posts/25308.htm/%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95.jpg">
-  <link rel="canonical" href="https://www.kkmblog.com/posts/25308">
+<meta name="twitter:image" content="https://www.kkmblog.com/posts/25308/%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95.jpg">
+  <link rel="canonical" href="https://www.kkmblog.com/posts/25308/">
 
 
 <script id="page-configurations">
@@ -271,7 +271,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="https://www.kkmblog.com/posts/25308.html">
+    <link itemprop="mainEntityOfPage" href="https://www.kkmblog.com/posts/25308/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kkm">
@@ -335,7 +335,7 @@
       
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/posts/25308.html#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/posts/25308.html" itemprop="commentCount"></span></a>
+    <a title="valine" href="/posts/25308/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/posts/25308/" itemprop="commentCount"></span></a>
   </span>
   
   
@@ -377,7 +377,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(<span class="string">"xx.xx.xx.dao"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestApplication</span> </span>&#123;s</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(TestApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>原因：bean注入失败，启动类和相应的包名没在同一级目录下，注解@SpringBootApplication只能扫描同级目录下以及子目录下的包。以下是正确的：</p>
-<p><img src="/posts/25308.htm/%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95.jpg" alt="目录"></p>
+<p><img src="/posts/25308/%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95.jpg" alt="目录"></p>
 <p>如果经过上述过程还没解决，请看一下你的maven是不是在使用IDEA默认的，如果是请自己下一个，改为自己的，IDEA默认的maven可能会有版本问题——这是在一个论坛上看到的，因为已经过去了一段时间，所以找不到那个网页了。我就是因为这个原因整整卡了两天。</p>
 <h2 id="坑二：mybatis代码自动生成工具Exception-getting-JDBC-Driver"><a href="#坑二：mybatis代码自动生成工具Exception-getting-JDBC-Driver" class="headerlink" title="坑二：mybatis代码自动生成工具Exception getting JDBC Driver"></a>坑二：mybatis代码自动生成工具Exception getting JDBC Driver</h2><p>这个是在使用mybatis-generator工具时遇到的，一直报错找不到JDBC驱动类，之后网上搜需要在pom文件里将generator插件改为如下配置</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.generator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-generator-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--以下dependencies标签中的内容是添加的内容--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.18<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.generator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-generator-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">overwrite</span>&gt;</span>true<span class="tag">&lt;/<span class="name">overwrite</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">verbose</span>&gt;</span>true<span class="tag">&lt;/<span class="name">verbose</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">configurationFile</span>&gt;</span>src/main/resources/generatorConfig.xml<span class="tag">&lt;/<span class="name">configurationFile</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -416,7 +416,7 @@
     <strong>本文作者： </strong>kkm</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.kkmblog.com/posts/25308.html" title="SpringBoot+mybatis+redis整合遇到的坑">https://www.kkmblog.com/posts/25308.html</a>
+    <a href="https://www.kkmblog.com/posts/25308/" title="SpringBoot+mybatis+redis整合遇到的坑">https://www.kkmblog.com/posts/25308/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -447,7 +447,7 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/posts/10735.html" rel="next" title="后端蓝牙开发包bluecove 2.1.2版本">
+                <a href="/posts/10735/" rel="next" title="后端蓝牙开发包bluecove 2.1.2版本">
                   <i class="fa fa-chevron-left"></i> 后端蓝牙开发包bluecove 2.1.2版本
                 </a>
               
