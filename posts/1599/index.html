@@ -232,9 +232,7 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="none"
-           placeholder="搜索..." spellcheck="false"
-           type="text" id="search-input">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
   </div>
   <span class="popup-btn-close">
     <i class="fa fa-times-circle"></i>
@@ -349,9 +347,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="具体情况"><a href="#具体情况" class="headerlink" title="具体情况"></a>具体情况</h2><p>之前这个博客网站一直在<a href="https://kuke-z.github.io" target="_blank" rel="noopener">Github(kuke-z.github.io)</a>上托管，这两天花钱买了域名<a href="https://kkmblog.com" target="_blank" rel="noopener">kkmblog.com</a>又买了空间，想着</p>
-<p>同时部署在GitHub和服务器上。具体服务器端环境搭建可参考这篇博文：<a href="https://www.pisho.com.cn/2018/12/18/CentOS7-Nginx-本地git-hexo建站过程/" target="_blank" rel="noopener">CentOS7+Nginx+本地git+hexo建站过程</a>。服务器端配置好后要从本地发布到服务器上遇到了问题，因为已经部署到过GitHub，所以全局_config.yml配置文件中deploy下的repo路径已经有了GitHub仓库的路径，不知道怎么添加服务器的路径。<a id="more"></a></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>看了很多博客，都是在介绍如何用多台机器部署到同一个站点的解决方法，最终找到了<a href="https://www.cnblogs.com/compassblog/p/8922624.html" target="_blank" rel="noopener">这篇博文</a>，在设置路径时采用了如下方式：</p>
+        <h2 id="具体情况"><a href="#具体情况" class="headerlink" title="具体情况"></a>具体情况</h2><p>之前这个博客网站一直在<a href="https://kuke-z.github.io" rel="external nofollow noopener noreferrer" target="_blank">Github(kuke-z.github.io)</a>上托管，这两天花钱买了域名<a href="https://kkmblog.com" rel="external nofollow noopener noreferrer" target="_blank">kkmblog.com</a>又买了空间，想着</p>
+<p>同时部署在GitHub和服务器上。具体服务器端环境搭建可参考这篇博文：<a href="https://www.pisho.com.cn/2018/12/18/CentOS7-Nginx-本地git-hexo建站过程/" rel="external nofollow noopener noreferrer" target="_blank">CentOS7+Nginx+本地git+hexo建站过程</a>。服务器端配置好后要从本地发布到服务器上遇到了问题，因为已经部署到过GitHub，所以全局_config.yml配置文件中deploy下的repo路径已经有了GitHub仓库的路径，不知道怎么添加服务器的路径。<a id="more"></a></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>看了很多博客，都是在介绍如何用多台机器部署到同一个站点的解决方法，最终找到了<a href="https://www.cnblogs.com/compassblog/p/8922624.html" rel="external nofollow noopener noreferrer" target="_blank">这篇博文</a>，在设置路径时采用了如下方式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type:git</span><br><span class="line">  repository:</span><br><span class="line">    github: 路径</span><br><span class="line">    coding: 路径</span><br></pre></td></tr></table></figure>
 
 <p>然后我将coding改为名字(myserver)，应该是其他名字也可以，然后填入路径<code>git@your_ip:url</code>，其中url是服务器上你的git版本库的根目录的绝对路径。测试，OK!</p>
@@ -375,7 +373,7 @@
     <a href="https://www.kkmblog.com/posts/1599/" title="hexo文章同时部署到github和个人服务器">https://www.kkmblog.com/posts/1599/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
 
@@ -468,9 +466,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="/images/avatar.jpg"
-      alt="kkm">
+    <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="kkm">
   <p class="site-author-name" itemprop="name">kkm</p>
   <div class="site-description" itemprop="description">嗨！</div>
 </div>
@@ -520,7 +516,7 @@
       
         
       
-        <a href="https://github.com/kuke-z" title="GitHub &rarr; https://github.com/kuke-z" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/kuke-z" title="GitHub &rarr; https://github.com/kuke-z" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
     
   </div>
@@ -533,7 +529,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://0vv0.in" title="http://0vv0.in" rel="noopener" target="_blank">L1ngFeng</a>
+          <a href="http://0vv0.in" title="http://0vv0.in" rel="external nofollow noopener noreferrer" target="_blank">L1ngFeng</a>
         </li>
       
     </ul>
@@ -558,9 +554,9 @@
   </span>
   <span class="author" itemprop="copyrightHolder">kkm</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> v7.4.0</div>
 
 
         
@@ -605,7 +601,7 @@
 
     
   
-  <script color='255,0,0' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script color="255,0,0" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
