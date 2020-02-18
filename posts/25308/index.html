@@ -1,4 +1,30 @@
-<!DOCTYPE html><html lang=zh-Hans><head><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=2"><meta name=theme-color content=#222><meta name=generator content="Hexo 3.9.0"><script data-ad-client=ca-pub-5811805760094857 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><link rel=apple-touch-icon sizes=180x180 href="/images/apple-touch-icon-next.png?v=7.4.0"><link rel=icon type=image/png sizes=32x32 href="/images/k.jpg?v=7.4.0"><link rel=icon type=image/png sizes=16x16 href="/images/k.jpg?v=7.4.0"><link rel=mask-icon href="/images/logo.svg?v=7.4.0" color=#222><meta name=baidu-site-verification content=OQKX8NmvKW><link rel=stylesheet href="/css/main.css?v=7.4.0"><link rel=stylesheet href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"><script id=hexo-configurations>
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+
+<script data-ad-client="ca-pub-5811805760094857" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/k.jpg?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/k.jpg?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+  <meta name="baidu-site-verification" content="OQKX8NmvKW">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
@@ -30,7 +56,26 @@
     },
     sidebarPadding: 40
   };
-</script><meta name=description content="目录 开发者工具 Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration. mybatis代码自动生成工具Exception getting JDBC Driver 数据存入redis 序列化的问题 maven执行install时自动运行mybatis-generator插件"><meta name=keywords content=Java,SpringBoot,mybatis,redis><meta property=og:type content=article><meta property=og:title content=SpringBoot+mybatis+redis整合遇到的坑><meta property=og:url content=https://www.kkmblog.com/posts/25308/index.html><meta property=og:site_name content="kkm&#39;s Blog"><meta property=og:description content="目录 开发者工具 Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration. mybatis代码自动生成工具Exception getting JDBC Driver 数据存入redis 序列化的问题 maven执行install时自动运行mybatis-generator插件"><meta property=og:locale content=zh-Hans><meta property=og:image content=https://www.kkmblog.com/posts/25308/%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95.jpg><meta property=og:updated_time content=2020-02-16T19:01:07.692Z><meta name=twitter:card content=summary><meta name=twitter:title content=SpringBoot+mybatis+redis整合遇到的坑><meta name=twitter:description content="目录 开发者工具 Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration. mybatis代码自动生成工具Exception getting JDBC Driver 数据存入redis 序列化的问题 maven执行install时自动运行mybatis-generator插件"><meta name=twitter:image content=https://www.kkmblog.com/posts/25308/%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95.jpg><link rel=canonical href="https://www.kkmblog.com/posts/25308/"><script id=page-configurations>
+</script>
+
+  <meta name="description" content="目录 开发者工具 Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration. mybatis代码自动生成工具Exception getting JDBC Driver 数据存入redis 序列化的问题 maven执行install时自动运行mybatis-generator插件">
+<meta name="keywords" content="Java,SpringBoot,mybatis,redis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot+mybatis+redis整合遇到的坑">
+<meta property="og:url" content="https://www.kkmblog.com/posts/25308/index.html">
+<meta property="og:site_name" content="kkm&#39;s Blog">
+<meta property="og:description" content="目录 开发者工具 Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration. mybatis代码自动生成工具Exception getting JDBC Driver 数据存入redis 序列化的问题 maven执行install时自动运行mybatis-generator插件">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.kkmblog.com/posts/25308/%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95.jpg">
+<meta property="og:updated_time" content="2020-02-16T19:01:07.692Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SpringBoot+mybatis+redis整合遇到的坑">
+<meta name="twitter:description" content="目录 开发者工具 Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration. mybatis代码自动生成工具Exception getting JDBC Driver 数据存入redis 序列化的问题 maven执行install时自动运行mybatis-generator插件">
+<meta name="twitter:image" content="https://www.kkmblog.com/posts/25308/%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95.jpg">
+  <link rel="canonical" href="https://www.kkmblog.com/posts/25308/">
+
+
+<script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -39,7 +84,13 @@
     isPage: false,
     isArchive: false
   };
-</script><title>SpringBoot+mybatis+redis整合遇到的坑 | kkm's Blog</title><script>
+</script>
+
+  <title>SpringBoot+mybatis+redis整合遇到的坑 | kkm's Blog</title>
+  
+
+
+  <script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -47,7 +98,15 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script><noscript><style>
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -67,7 +126,542 @@
 
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
-  </style></noscript></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-Hans><div class="container use-motion"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-meta><div><a href="/" class=brand rel=start><span class=logo-line-before><i></i></span> <span class=site-title>kkm's Blog</span> <span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>hello World！</p></div><div class=site-nav-toggle><button aria-label=切换导航栏><span class=btn-bar></span> <span class=btn-bar></span> <span class=btn-bar></span></button></div></div><nav class=site-nav><ul id=menu class=menu><li class="menu-item menu-item-home"><a href="/" rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel=section><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel=section><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul></nav><div class=site-search><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocorrect=off autocapitalize=none placeholder=搜索... spellcheck=false type=text id=search-input></div><span class=popup-btn-close><i class="fa fa-times-circle"></i></span></div><div id=search-result></div></div><div class=search-pop-overlay></div></div></div></header><div class=back-to-top><i class="fa fa-arrow-up"></i> <span>0%</span></div><div class=reading-progress-bar></div><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><div id=posts class=posts-expand><article itemscope itemtype=http://schema.org/Article><div class="post-block post"><link itemprop=mainEntityOfPage href="https://www.kkmblog.com/posts/25308/"><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=name content=kkm><meta itemprop=description content=嗨！><meta itemprop=image content=/images/avatar.jpg></span> <span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="kkm's Blog"></span><header class=post-header><h1 class=post-title itemprop="name headline">SpringBoot+mybatis+redis整合遇到的坑</h1><div class=post-meta><span class=post-meta-item><span class=post-meta-item-icon><i class="fa fa-calendar-o"></i></span> <span class=post-meta-item-text>发表于</span><time title="创建时间：2020-01-21 06:45:49" itemprop="dateCreated datePublished" datetime=2020-01-21T06:45:49+08:00>2020-01-21</time></span> <span class=post-meta-item><span class=post-meta-item-icon><i class="fa fa-folder-o"></i></span> <span class=post-meta-item-text>分类于</span> <span itemprop=about itemscope itemtype=http://schema.org/Thing><a href="/categories/笔记/" itemprop=url rel=index><span itemprop=name>笔记</span></a></span></span> <span class=post-meta-item title=阅读次数><span class=post-meta-item-icon><i class="fa fa-eye"></i></span> <span class=post-meta-item-text>阅读次数：</span> <span class=busuanzi-value id=busuanzi_value_page_pv></span></span> <span class=post-meta-item><span class=post-meta-item-icon><i class="fa fa-comment-o"></i></span> <span class=post-meta-item-text>Valine：</span> <a title=valine href=/posts/25308/#comments itemprop=discussionUrl><span class="post-comments-count valine-comment-count" data-xid="/posts/25308/" itemprop=commentCount></span></a></span></div></header><div class=post-body itemprop=articleBody><h2 id=目录><a href=#目录 class=headerlink title=目录></a>目录</h2><ol><li>开发者工具</li><li>Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration.</li><li>mybatis代码自动生成工具Exception getting JDBC Driver</li><li>数据存入redis 序列化的问题</li><li>maven执行install时自动运行mybatis-generator插件</li></ol><a id=more></a><h2 id=开发工具及环境><a href=#开发工具及环境 class=headerlink title=开发工具及环境></a>开发工具及环境</h2><p>工具：IDEA</p><p>环境：SpringBoot、mybatis、JDK11、MySQL80、redis</p><h2 id=坑一：Consider-defining-a-bean-of-type-‘xx-xx-xx-dao-xxMapper’-in-your-configuration><a href=#坑一：Consider-defining-a-bean-of-type-‘xx-xx-xx-dao-xxMapper’-in-your-configuration class=headerlink title="坑一：Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration."></a>坑一：Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration.</h2><p>网上的解决方法大概有三种：</p><ol><li>在每个Mapper类上添加注解@Mapper，如</li></ol><figure class="highlight java"><table><tr><td class=gutter><pre><span class=line>1</span><br><span class=line>2</span><br><span class=line>3</span><br><span class=line>4</span><br><span class=line>5</span><br><span class=line>6</span><br><span class=line>7</span><br><span class=line>8</span><br><span class=line>9</span><br><span class=line>10</span><br><span class=line>11</span><br><span class=line>12</span><br></pre></td><td class=code><pre><span class=line><span class=meta>@Mapper</span></span><br><span class=line><span class=keyword>public</span> <span class=class><span class=keyword>interface</span> <span class=title>TestMapper</span> </span>&#123;</span><br><span class=line>    <span class=function><span class=keyword>int</span> <span class=title>deleteByPrimaryKey</span><span class=params>(String testId)</span></span>;</span><br><span class=line></span><br><span class=line>    <span class=function><span class=keyword>int</span> <span class=title>insert</span><span class=params>(Test record)</span></span>;</span><br><span class=line></span><br><span class=line>    <span class=function>Test <span class=title>selectByPrimaryKey</span><span class=params>(String testId)</span></span>;</span><br><span class=line></span><br><span class=line>    <span class=function>List&lt;Test&gt; <span class=title>selectAll</span><span class=params>()</span></span>;</span><br><span class=line></span><br><span class=line>    <span class=function><span class=keyword>int</span> <span class=title>updateByPrimaryKey</span><span class=params>(Test record)</span></span>;</span><br><span class=line>&#125;</span><br></pre></td></tr></table></figure><ol start=2><li>在SpringBoot启动类上添加注解@MapperScan(“xx.xx.xx.dao”)，引号内容是Mapper类所在的包名，如</li></ol><figure class="highlight java"><table><tr><td class=gutter><pre><span class=line>1</span><br><span class=line>2</span><br><span class=line>3</span><br><span class=line>4</span><br><span class=line>5</span><br><span class=line>6</span><br><span class=line>7</span><br><span class=line>8</span><br></pre></td><td class=code><pre><span class=line><span class=meta>@SpringBootApplication</span></span><br><span class=line><span class=meta>@MapperScan</span>(<span class=string>"com.gwg.bwtgame.dao"</span>)</span><br><span class=line><span class=keyword>public</span> <span class=class><span class=keyword>class</span> <span class=title>TestApplication</span> </span>&#123;</span><br><span class=line>    <span class=function><span class=keyword>public</span> <span class=keyword>static</span> <span class=keyword>void</span> <span class=title>main</span><span class=params>(String[] args)</span> </span>&#123;</span><br><span class=line>        SpringApplication.run(TestApplication.class, args);</span><br><span class=line>    &#125;</span><br><span class=line></span><br><span class=line>&#125;</span><br></pre></td></tr></table></figure><ol start=3><li>在SpringBoot启动类上添加注解@ComponentScan( “xx.xx.xx.dao”)。注意此注解可以同时扫描多个包，格式为：@ComponentScan( {“xx.xx.xx.dao”, “xx.xx.xx.entity”})</li></ol><figure class="highlight java"><table><tr><td class=gutter><pre><span class=line>1</span><br><span class=line>2</span><br><span class=line>3</span><br><span class=line>4</span><br><span class=line>5</span><br><span class=line>6</span><br><span class=line>7</span><br></pre></td><td class=code><pre><span class=line><span class=meta>@SpringBootApplication</span></span><br><span class=line><span class=meta>@ComponentScan</span>(<span class=string>"xx.xx.xx.dao"</span>)</span><br><span class=line><span class=keyword>public</span> <span class=class><span class=keyword>class</span> <span class=title>TestApplication</span> </span>&#123;s</span><br><span class=line>    <span class=function><span class=keyword>public</span> <span class=keyword>static</span> <span class=keyword>void</span> <span class=title>main</span><span class=params>(String[] args)</span> </span>&#123;</span><br><span class=line>        SpringApplication.run(TestApplication.class, args);</span><br><span class=line>    &#125;</span><br><span class=line>&#125;</span><br></pre></td></tr></table></figure><p>原因：bean注入失败，启动类和相应的包名没在同一级目录下，注解@SpringBootApplication只能扫描同级目录下以及子目录下的包。以下是正确的：</p><p><img src=/posts/25308/%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95.jpg alt=目录></p><p>如果经过上述过程还没解决，请看一下你的maven是不是在使用IDEA默认的，如果是请自己下一个，改为自己的，IDEA默认的maven可能会有版本问题——这是在一个论坛上看到的，因为已经过去了一段时间，所以找不到那个网页了。我就是因为这个原因整整卡了两天。</p><h2 id=坑二：mybatis代码自动生成工具Exception-getting-JDBC-Driver><a href=#坑二：mybatis代码自动生成工具Exception-getting-JDBC-Driver class=headerlink title="坑二：mybatis代码自动生成工具Exception getting JDBC Driver"></a>坑二：mybatis代码自动生成工具Exception getting JDBC Driver</h2><p>这个是在使用mybatis-generator工具时遇到的，一直报错找不到JDBC驱动类，之后网上搜需要在pom文件里将generator插件改为如下配置</p><figure class="highlight xml"><table><tr><td class=gutter><pre><span class=line>1</span><br><span class=line>2</span><br><span class=line>3</span><br><span class=line>4</span><br><span class=line>5</span><br><span class=line>6</span><br><span class=line>7</span><br><span class=line>8</span><br><span class=line>9</span><br><span class=line>10</span><br><span class=line>11</span><br><span class=line>12</span><br><span class=line>13</span><br><span class=line>14</span><br><span class=line>15</span><br><span class=line>16</span><br><span class=line>17</span><br><span class=line>18</span><br><span class=line>19</span><br><span class=line>20</span><br><span class=line>21</span><br><span class=line>22</span><br><span class=line>23</span><br><span class=line>24</span><br><span class=line>25</span><br><span class=line>26</span><br><span class=line>27</span><br><span class=line>28</span><br></pre></td><td class=code><pre><span class=line><span class=tag>&lt;<span class=name>build</span>&gt;</span></span><br><span class=line>    <span class=tag>&lt;<span class=name>plugins</span>&gt;</span></span><br><span class=line>        <span class=tag>&lt;<span class=name>plugin</span>&gt;</span></span><br><span class=line>                <span class=tag>&lt;<span class=name>groupId</span>&gt;</span>org.mybatis.generator<span class=tag>&lt;/<span class=name>groupId</span>&gt;</span></span><br><span class=line>                <span class=tag>&lt;<span class=name>artifactId</span>&gt;</span>mybatis-generator-maven-plugin<span class=tag>&lt;/<span class=name>artifactId</span>&gt;</span></span><br><span class=line>                <span class=tag>&lt;<span class=name>version</span>&gt;</span>1.4.0<span class=tag>&lt;/<span class=name>version</span>&gt;</span></span><br><span class=line>                <span class=comment>&lt;!--以下dependencies标签中的内容是添加的内容--&gt;</span></span><br><span class=line>                <span class=tag>&lt;<span class=name>dependencies</span>&gt;</span></span><br><span class=line>                    <span class=tag>&lt;<span class=name>dependency</span>&gt;</span></span><br><span class=line>                        <span class=tag>&lt;<span class=name>groupId</span>&gt;</span>mysql<span class=tag>&lt;/<span class=name>groupId</span>&gt;</span></span><br><span class=line>                        <span class=tag>&lt;<span class=name>artifactId</span>&gt;</span>mysql-connector-java<span class=tag>&lt;/<span class=name>artifactId</span>&gt;</span></span><br><span class=line>                        <span class=tag>&lt;<span class=name>version</span>&gt;</span>8.0.18<span class=tag>&lt;/<span class=name>version</span>&gt;</span></span><br><span class=line>                        <span class=tag>&lt;<span class=name>scope</span>&gt;</span>runtime<span class=tag>&lt;/<span class=name>scope</span>&gt;</span></span><br><span class=line>                    <span class=tag>&lt;/<span class=name>dependency</span>&gt;</span></span><br><span class=line>                    <span class=tag>&lt;<span class=name>dependency</span>&gt;</span></span><br><span class=line>                        <span class=tag>&lt;<span class=name>groupId</span>&gt;</span>org.mybatis.generator<span class=tag>&lt;/<span class=name>groupId</span>&gt;</span></span><br><span class=line>                        <span class=tag>&lt;<span class=name>artifactId</span>&gt;</span>mybatis-generator-core<span class=tag>&lt;/<span class=name>artifactId</span>&gt;</span></span><br><span class=line>                        <span class=tag>&lt;<span class=name>version</span>&gt;</span>1.4.0<span class=tag>&lt;/<span class=name>version</span>&gt;</span></span><br><span class=line>                    <span class=tag>&lt;/<span class=name>dependency</span>&gt;</span></span><br><span class=line>                <span class=tag>&lt;/<span class=name>dependencies</span>&gt;</span></span><br><span class=line>                <span class=tag>&lt;<span class=name>configuration</span>&gt;</span></span><br><span class=line>                    <span class=tag>&lt;<span class=name>overwrite</span>&gt;</span>true<span class=tag>&lt;/<span class=name>overwrite</span>&gt;</span></span><br><span class=line>                    <span class=tag>&lt;<span class=name>verbose</span>&gt;</span>true<span class=tag>&lt;/<span class=name>verbose</span>&gt;</span></span><br><span class=line>                    <span class=tag>&lt;<span class=name>configurationFile</span>&gt;</span>src/main/resources/generatorConfig.xml<span class=tag>&lt;/<span class=name>configurationFile</span>&gt;</span></span><br><span class=line>                <span class=tag>&lt;/<span class=name>configuration</span>&gt;</span></span><br><span class=line>            <span class=tag>&lt;/<span class=name>plugin</span>&gt;</span></span><br><span class=line>    <span class=tag>&lt;/<span class=name>plugins</span>&gt;</span></span><br><span class=line><span class=tag>&lt;/<span class=name>build</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id=坑三：数据存入redis-序列化的问题><a href=#坑三：数据存入redis-序列化的问题 class=headerlink title="坑三：数据存入redis 序列化的问题"></a>坑三：数据存入redis 序列化的问题</h2><p>从<a href=https://www.imooc.com/video/11823 rel="external nofollow noopener noreferrer" target=_blank>慕课视频</a>开始学的redis缓存，然后又结合网上的例子开始写了。</p><p>一开始开始采用重写RedisTemplete和自编RedisUtil工具类的方法去写，然后这种方法很难(可能是我不知道)与mybatis结合，必须自己实现dao接口。</p><p>然后采用注解@Cacheable方式，这就很方便了，可以很容易结合mybatis。然后问题来了在@Cacheable( value=”test”,key=”‘getById’+#id”)是一直报错，一直说参数无法序列化：</p><figure class="highlight plain"><table><tr><td class=gutter><pre><span class=line>1</span><br></pre></td><td class=code><pre><span class=line>DefaultSerializer requires a Serializable payload but received an object of type</span><br></pre></td></tr></table></figure><p>参数id类型为int甚至改为了String，都不行，然后网上找解决方法在<a href=https://www.cnblogs.com/cjsblog/p/9150482.html rel="external nofollow noopener noreferrer" target=_blank>这里</a>直接将博主的RedisConfig配置类复制后就可以了，以下是我的和博主的对比：</p><p>我的：</p><figure class="highlight java"><table><tr><td class=gutter><pre><span class=line>1</span><br><span class=line>2</span><br><span class=line>3</span><br><span class=line>4</span><br><span class=line>5</span><br><span class=line>6</span><br><span class=line>7</span><br><span class=line>8</span><br><span class=line>9</span><br><span class=line>10</span><br><span class=line>11</span><br><span class=line>12</span><br><span class=line>13</span><br><span class=line>14</span><br><span class=line>15</span><br><span class=line>16</span><br><span class=line>17</span><br><span class=line>18</span><br><span class=line>19</span><br><span class=line>20</span><br><span class=line>21</span><br><span class=line>22</span><br><span class=line>23</span><br><span class=line>24</span><br><span class=line>25</span><br><span class=line>26</span><br><span class=line>27</span><br><span class=line>28</span><br><span class=line>29</span><br><span class=line>30</span><br><span class=line>31</span><br><span class=line>32</span><br><span class=line>33</span><br><span class=line>34</span><br><span class=line>35</span><br><span class=line>36</span><br><span class=line>37</span><br><span class=line>38</span><br><span class=line>39</span><br><span class=line>40</span><br><span class=line>41</span><br><span class=line>42</span><br><span class=line>43</span><br><span class=line>44</span><br><span class=line>45</span><br><span class=line>46</span><br><span class=line>47</span><br><span class=line>48</span><br><span class=line>49</span><br><span class=line>50</span><br><span class=line>51</span><br><span class=line>52</span><br><span class=line>53</span><br><span class=line>54</span><br><span class=line>55</span><br><span class=line>56</span><br><span class=line>57</span><br><span class=line>58</span><br><span class=line>59</span><br><span class=line>60</span><br><span class=line>61</span><br><span class=line>62</span><br><span class=line>63</span><br><span class=line>64</span><br><span class=line>65</span><br><span class=line>66</span><br><span class=line>67</span><br><span class=line>68</span><br><span class=line>69</span><br><span class=line>70</span><br><span class=line>71</span><br><span class=line>72</span><br><span class=line>73</span><br><span class=line>74</span><br><span class=line>75</span><br><span class=line>76</span><br><span class=line>77</span><br><span class=line>78</span><br><span class=line>79</span><br><span class=line>80</span><br><span class=line>81</span><br><span class=line>82</span><br><span class=line>83</span><br><span class=line>84</span><br><span class=line>85</span><br><span class=line>86</span><br><span class=line>87</span><br><span class=line>88</span><br><span class=line>89</span><br><span class=line>90</span><br><span class=line>91</span><br><span class=line>92</span><br><span class=line>93</span><br></pre></td><td class=code><pre><span class=line><span class=keyword>package</span> xx.xx.xx.config;</span><br><span class=line></span><br><span class=line><span class=keyword>import</span> com.fasterxml.jackson.annotation.JsonAutoDetect;</span><br><span class=line><span class=keyword>import</span> com.fasterxml.jackson.annotation.PropertyAccessor;</span><br><span class=line><span class=keyword>import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class=line><span class=keyword>import</span> org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;</span><br><span class=line><span class=keyword>import</span> org.springframework.cache.annotation.CachingConfigurerSupport;</span><br><span class=line><span class=keyword>import</span> org.springframework.cache.annotation.EnableCaching;</span><br><span class=line><span class=keyword>import</span> org.springframework.cache.interceptor.KeyGenerator;</span><br><span class=line><span class=keyword>import</span> org.springframework.context.annotation.Bean;</span><br><span class=line><span class=keyword>import</span> org.springframework.context.annotation.Configuration;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.cache.RedisCacheConfiguration;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.cache.RedisCacheManager;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.cache.RedisCacheWriter;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.connection.RedisConnectionFactory;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.core.*;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.serializer.RedisSerializationContext;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.serializer.StringRedisSerializer;</span><br><span class=line></span><br><span class=line><span class=keyword>import</span> java.lang.reflect.Method;</span><br><span class=line></span><br><span class=line></span><br><span class=line><span class=meta>@Configuration</span></span><br><span class=line><span class=meta>@EnableCaching</span> <span class=comment>//开启注解</span></span><br><span class=line><span class=keyword>public</span> <span class=class><span class=keyword>class</span> <span class=title>RedisConfig</span> <span class=keyword>extends</span> <span class=title>CachingConfigurerSupport</span> </span>&#123;</span><br><span class=line>    <span class=meta>@Bean</span></span><br><span class=line>    <span class=function><span class=keyword>public</span> RedisCacheManager <span class=title>cacheManager</span><span class=params>(RedisConnectionFactory redisConnectionFactory)</span></span>&#123;</span><br><span class=line>        RedisCacheConfiguration redisCacheConfiguration=RedisCacheConfiguration.defaultCacheConfig();</span><br><span class=line>        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer=<span class=keyword>new</span> Jackson2JsonRedisSerializer(Object.class);</span><br><span class=line>        redisCacheConfiguration.serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(jackson2JsonRedisSerializer));</span><br><span class=line>        redisCacheConfiguration.serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(<span class=keyword>new</span> StringRedisSerializer()));</span><br><span class=line>        <span class=keyword>return</span> RedisCacheManager</span><br><span class=line>                .builder(RedisCacheWriter.nonLockingRedisCacheWriter(redisConnectionFactory))</span><br><span class=line>                .cacheDefaults(redisCacheConfiguration).build();</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=meta>@Bean</span></span><br><span class=line>    <span class=meta>@ConditionalOnMissingBean</span></span><br><span class=line>    <span class=function><span class=keyword>public</span> RedisTemplate&lt;String,Object&gt; <span class=title>redisTemplate</span><span class=params>(RedisConnectionFactory redisConnectionFactory)</span> </span>&#123;</span><br><span class=line>        StringRedisSerializer stringRedisSerializer=<span class=keyword>new</span> StringRedisSerializer();</span><br><span class=line>        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer=<span class=keyword>new</span> Jackson2JsonRedisSerializer(Object.class);</span><br><span class=line>        RedisTemplate&lt;String ,Object&gt; redisTemplate=<span class=keyword>new</span> RedisTemplate&lt;&gt;();</span><br><span class=line>        redisTemplate.setConnectionFactory(redisConnectionFactory);</span><br><span class=line>        redisTemplate.setEnableTransactionSupport(<span class=keyword>true</span>);</span><br><span class=line>        ObjectMapper objectMapper=<span class=keyword>new</span> ObjectMapper();</span><br><span class=line>        objectMapper.setVisibility(PropertyAccessor.ALL,JsonAutoDetect.Visibility.ANY);</span><br><span class=line>        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);</span><br><span class=line>        jackson2JsonRedisSerializer.setObjectMapper(objectMapper);</span><br><span class=line></span><br><span class=line>        redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);</span><br><span class=line>        redisTemplate.setKeySerializer(<span class=keyword>new</span> StringRedisSerializer());</span><br><span class=line>        redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);</span><br><span class=line>        redisTemplate.setHashKeySerializer(<span class=keyword>new</span> StringRedisSerializer());</span><br><span class=line>        redisTemplate.afterPropertiesSet();</span><br><span class=line>        <span class=keyword>return</span> redisTemplate;</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=comment>/**</span></span><br><span class=line><span class=comment>     * hash类型配置</span></span><br><span class=line><span class=comment>     */</span></span><br><span class=line>    <span class=meta>@Bean</span></span><br><span class=line>    <span class=function><span class=keyword>public</span> HashOperations&lt;String, String, Object&gt; <span class=title>hashOperations</span><span class=params>(RedisTemplate&lt;String, Object&gt; redisTemplate)</span> </span>&#123;</span><br><span class=line>        <span class=keyword>return</span> redisTemplate.opsForHash();</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=comment>/**</span></span><br><span class=line><span class=comment>     * 对redis字符串类型数据操作</span></span><br><span class=line><span class=comment>     */</span></span><br><span class=line>    <span class=meta>@Bean</span></span><br><span class=line>    <span class=function><span class=keyword>public</span> ValueOperations&lt;String, Object&gt; <span class=title>valueOperations</span><span class=params>(RedisTemplate&lt;String, Object&gt; redisTemplate)</span> </span>&#123;</span><br><span class=line>        <span class=keyword>return</span> redisTemplate.opsForValue();</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=comment>/**</span></span><br><span class=line><span class=comment>     * 对链表类型的数据操作</span></span><br><span class=line><span class=comment>     */</span></span><br><span class=line>    <span class=meta>@Bean</span></span><br><span class=line>    <span class=function><span class=keyword>public</span> ListOperations&lt;String, Object&gt; <span class=title>listOperations</span><span class=params>(RedisTemplate&lt;String, Object&gt; redisTemplate)</span> </span>&#123;</span><br><span class=line>        <span class=keyword>return</span> redisTemplate.opsForList();</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=comment>/**</span></span><br><span class=line><span class=comment>     * 对无序集合类型的数据操作</span></span><br><span class=line><span class=comment>     */</span></span><br><span class=line>    <span class=meta>@Bean</span></span><br><span class=line>    <span class=function><span class=keyword>public</span> SetOperations&lt;String, Object&gt; <span class=title>setOperations</span><span class=params>(RedisTemplate&lt;String, Object&gt; redisTemplate)</span> </span>&#123;</span><br><span class=line>        <span class=keyword>return</span> redisTemplate.opsForSet();</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=comment>/**</span></span><br><span class=line><span class=comment>     * 对有序集合类型的数据操作</span></span><br><span class=line><span class=comment>     */</span></span><br><span class=line>    <span class=meta>@Bean</span></span><br><span class=line>    <span class=function><span class=keyword>public</span> ZSetOperations&lt;String, Object&gt; <span class=title>zSetOperations</span><span class=params>(RedisTemplate&lt;String, Object&gt; redisTemplate)</span> </span>&#123;</span><br><span class=line>        <span class=keyword>return</span> redisTemplate.opsForZSet();</span><br><span class=line>    &#125;</span><br><span class=line>&#125;</span><br></pre></td></tr></table></figure><p>博主的：</p><figure class="highlight java"><table><tr><td class=gutter><pre><span class=line>1</span><br><span class=line>2</span><br><span class=line>3</span><br><span class=line>4</span><br><span class=line>5</span><br><span class=line>6</span><br><span class=line>7</span><br><span class=line>8</span><br><span class=line>9</span><br><span class=line>10</span><br><span class=line>11</span><br><span class=line>12</span><br><span class=line>13</span><br><span class=line>14</span><br><span class=line>15</span><br><span class=line>16</span><br><span class=line>17</span><br><span class=line>18</span><br><span class=line>19</span><br><span class=line>20</span><br><span class=line>21</span><br><span class=line>22</span><br><span class=line>23</span><br><span class=line>24</span><br><span class=line>25</span><br><span class=line>26</span><br><span class=line>27</span><br><span class=line>28</span><br><span class=line>29</span><br><span class=line>30</span><br><span class=line>31</span><br><span class=line>32</span><br><span class=line>33</span><br><span class=line>34</span><br><span class=line>35</span><br><span class=line>36</span><br><span class=line>37</span><br><span class=line>38</span><br><span class=line>39</span><br><span class=line>40</span><br><span class=line>41</span><br><span class=line>42</span><br><span class=line>43</span><br><span class=line>44</span><br><span class=line>45</span><br><span class=line>46</span><br><span class=line>47</span><br><span class=line>48</span><br><span class=line>49</span><br><span class=line>50</span><br><span class=line>51</span><br><span class=line>52</span><br><span class=line>53</span><br><span class=line>54</span><br><span class=line>55</span><br><span class=line>56</span><br><span class=line>57</span><br><span class=line>58</span><br></pre></td><td class=code><pre><span class=line><span class=keyword>package</span> xx.xx.xx.config;</span><br><span class=line><span class=keyword>import</span> com.fasterxml.jackson.annotation.JsonAutoDetect;</span><br><span class=line><span class=keyword>import</span> com.fasterxml.jackson.annotation.PropertyAccessor;</span><br><span class=line><span class=keyword>import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class=line><span class=keyword>import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class=line><span class=keyword>import</span> org.springframework.cache.annotation.CachingConfigurerSupport;</span><br><span class=line><span class=keyword>import</span> org.springframework.cache.annotation.EnableCaching;</span><br><span class=line><span class=keyword>import</span> org.springframework.context.annotation.Bean;</span><br><span class=line><span class=keyword>import</span> org.springframework.context.annotation.Configuration;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.cache.RedisCacheConfiguration;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.cache.RedisCacheManager;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.cache.RedisCacheWriter;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.connection.RedisConnectionFactory;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.core.RedisTemplate;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.serializer.RedisSerializationContext;</span><br><span class=line><span class=keyword>import</span> org.springframework.data.redis.serializer.StringRedisSerializer;</span><br><span class=line><span class=meta>@EnableCaching</span></span><br><span class=line><span class=meta>@Configuration</span></span><br><span class=line><span class=keyword>public</span> <span class=class><span class=keyword>class</span> <span class=title>RedisConfig</span> <span class=keyword>extends</span> <span class=title>CachingConfigurerSupport</span> </span>&#123;</span><br><span class=line>    <span class=meta>@Autowired</span></span><br><span class=line>    <span class=keyword>private</span> RedisConnectionFactory redisConnectionFactory;</span><br><span class=line>    <span class=meta>@Bean</span></span><br><span class=line>    <span class=function><span class=keyword>public</span> RedisTemplate&lt;String, Object&gt; <span class=title>redisTemplate</span><span class=params>(RedisConnectionFactory redisConnectionFactory)</span> </span>&#123;</span><br><span class=line>        Jackson2JsonRedisSerializer&lt;Object&gt; serializer = <span class=keyword>new</span> Jackson2JsonRedisSerializer&lt;Object&gt;(Object.class);</span><br><span class=line>        ObjectMapper objectMapper = <span class=keyword>new</span> ObjectMapper();</span><br><span class=line>        objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);</span><br><span class=line>        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);</span><br><span class=line>        serializer.setObjectMapper(objectMapper);</span><br><span class=line>        RedisTemplate&lt;String, Object&gt; redisTemplate = <span class=keyword>new</span> RedisTemplate&lt;&gt;();</span><br><span class=line>        redisTemplate.setConnectionFactory(redisConnectionFactory);</span><br><span class=line>        redisTemplate.setKeySerializer(<span class=keyword>new</span> StringRedisSerializer());</span><br><span class=line>        redisTemplate.setValueSerializer(serializer);</span><br><span class=line>        redisTemplate.setHashKeySerializer(<span class=keyword>new</span> StringRedisSerializer());</span><br><span class=line>        redisTemplate.setHashValueSerializer(serializer);</span><br><span class=line>        redisTemplate.afterPropertiesSet();</span><br><span class=line>        <span class=keyword>return</span> redisTemplate;</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=meta>@Bean</span></span><br><span class=line>    <span class=function><span class=keyword>public</span> RedisCacheManager <span class=title>redisCacheManager</span><span class=params>(RedisTemplate redisTemplate)</span> </span>&#123;</span><br><span class=line>        RedisCacheWriter redisCacheWriter = RedisCacheWriter.nonLockingRedisCacheWriter(redisTemplate.getConnectionFactory());</span><br><span class=line>        RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()</span><br><span class=line>                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(redisTemplate.getValueSerializer()));</span><br><span class=line>        <span class=keyword>return</span> <span class=keyword>new</span> RedisCacheManager(redisCacheWriter, redisCacheConfiguration);</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=comment>/**</span></span><br><span class=line><span class=comment>     * 二者选其一即可</span></span><br><span class=line><span class=comment>     */</span></span><br><span class=line><span class=comment>//    @Bean</span></span><br><span class=line><span class=comment>//    public RedisCacheConfiguration redisCacheConfiguration() &#123;</span></span><br><span class=line><span class=comment>//        Jackson2JsonRedisSerializer&lt;Object&gt; serializer = new Jackson2JsonRedisSerializer&lt;Object&gt;(Object.class);</span></span><br><span class=line><span class=comment>//        ObjectMapper objectMapper = new ObjectMapper();</span></span><br><span class=line><span class=comment>//        objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);</span></span><br><span class=line><span class=comment>//        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);</span></span><br><span class=line><span class=comment>//        serializer.setObjectMapper(objectMapper);</span></span><br><span class=line><span class=comment>//        return RedisCacheConfiguration.defaultCacheConfig().serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(serializer));</span></span><br><span class=line><span class=comment>//    &#125;</span></span><br><span class=line>&#125;</span><br></pre></td></tr></table></figure><p>现在还是有点迷糊，不知道哪里配置不对了，key和value也都设置了序列化机制，但不知为什么不生效。不过现在是可以了，以后再研究。</p><h2 id=坑四：maven执行install时自动运行mybatis-generator插件><a href=#坑四：maven执行install时自动运行mybatis-generator插件 class=headerlink title=坑四：maven执行install时自动运行mybatis-generator插件></a>坑四：maven执行install时自动运行mybatis-generator插件</h2><p>后台代码写了个测试demo，可运行，想想着打包在服务器上运行试试，然后maven的clean、install，打包成功，有warning，没管，然后本地运行，报错找不到mapper类的bean，然后去看mapper的配置文件，发现里边有两个一模一样的bean，熟悉的配方，确认是代码生成工具的锅，删掉多余的，运行成功，然后又clean、install、运行有报错、找不到bean、看来是generator工具会自动在install时运行，找资料，相关博文貌似不是很多，但还是解决了一下摘自<a href=https://blog.csdn.net/luckyxl029/article/details/77180285 rel="external nofollow noopener noreferrer" target=_blank>使用mybatis-generator插件后的maven打包问题</a>:</p><p>原因：是因为mybatis-generator插件默认绑定了package的生命周期</p><p>解决：在pom中手动设置一下mybatis-generator插件绑定的生命周期即可</p><figure class="highlight xml"><table><tr><td class=gutter><pre><span class=line>1</span><br><span class=line>2</span><br><span class=line>3</span><br><span class=line>4</span><br><span class=line>5</span><br><span class=line>6</span><br><span class=line>7</span><br><span class=line>8</span><br><span class=line>9</span><br><span class=line>10</span><br><span class=line>11</span><br><span class=line>12</span><br><span class=line>13</span><br><span class=line>14</span><br><span class=line>15</span><br><span class=line>16</span><br><span class=line>17</span><br><span class=line>18</span><br><span class=line>19</span><br><span class=line>20</span><br><span class=line>21</span><br><span class=line>22</span><br><span class=line>23</span><br><span class=line>24</span><br><span class=line>25</span><br><span class=line>26</span><br><span class=line>27</span><br><span class=line>28</span><br><span class=line>29</span><br><span class=line>30</span><br><span class=line>31</span><br><span class=line>32</span><br><span class=line>33</span><br></pre></td><td class=code><pre><span class=line><span class=tag>&lt;<span class=name>plugin</span>&gt;</span></span><br><span class=line>               <span class=tag>&lt;<span class=name>groupId</span>&gt;</span>org.mybatis.generator<span class=tag>&lt;/<span class=name>groupId</span>&gt;</span></span><br><span class=line>               <span class=tag>&lt;<span class=name>artifactId</span>&gt;</span>mybatis-generator-maven-plugin<span class=tag>&lt;/<span class=name>artifactId</span>&gt;</span></span><br><span class=line>               <span class=tag>&lt;<span class=name>version</span>&gt;</span>1.4.0<span class=tag>&lt;/<span class=name>version</span>&gt;</span></span><br><span class=line>    		<span class=comment>&lt;!--解决mybatis代码自动生成工具随maven打包运行的问题--&gt;</span></span><br><span class=line>    			<span class=tag>&lt;<span class=name>executions</span>&gt;</span></span><br><span class=line>  					<span class=tag>&lt;<span class=name>execution</span>&gt;</span></span><br><span class=line>       				<span class=tag>&lt;<span class=name>id</span>&gt;</span>Generate MyBatis Artifacts<span class=tag>&lt;/<span class=name>id</span>&gt;</span></span><br><span class=line>       				<span class=tag>&lt;<span class=name>phase</span>&gt;</span>deploy<span class=tag>&lt;/<span class=name>phase</span>&gt;</span></span><br><span class=line>                       <span class=tag>&lt;<span class=name>goals</span>&gt;</span></span><br><span class=line>                           <span class=tag>&lt;<span class=name>goal</span>&gt;</span>generate<span class=tag>&lt;/<span class=name>goal</span>&gt;</span></span><br><span class=line>                       <span class=tag>&lt;/<span class=name>goals</span>&gt;</span></span><br><span class=line>                   <span class=tag>&lt;/<span class=name>execution</span>&gt;</span></span><br><span class=line>               <span class=tag>&lt;/<span class=name>executions</span>&gt;</span></span><br><span class=line>               <span class=tag>&lt;<span class=name>dependencies</span>&gt;</span></span><br><span class=line>                   <span class=tag>&lt;<span class=name>dependency</span>&gt;</span></span><br><span class=line>                       <span class=tag>&lt;<span class=name>groupId</span>&gt;</span>mysql<span class=tag>&lt;/<span class=name>groupId</span>&gt;</span></span><br><span class=line>                       <span class=tag>&lt;<span class=name>artifactId</span>&gt;</span>mysql-connector-java<span class=tag>&lt;/<span class=name>artifactId</span>&gt;</span></span><br><span class=line>                       <span class=tag>&lt;<span class=name>version</span>&gt;</span>8.0.18<span class=tag>&lt;/<span class=name>version</span>&gt;</span></span><br><span class=line>                       <span class=tag>&lt;<span class=name>scope</span>&gt;</span>runtime<span class=tag>&lt;/<span class=name>scope</span>&gt;</span></span><br><span class=line>                   <span class=tag>&lt;/<span class=name>dependency</span>&gt;</span></span><br><span class=line>                   <span class=tag>&lt;<span class=name>dependency</span>&gt;</span></span><br><span class=line>                       <span class=tag>&lt;<span class=name>groupId</span>&gt;</span>org.mybatis.generator<span class=tag>&lt;/<span class=name>groupId</span>&gt;</span></span><br><span class=line>                       <span class=tag>&lt;<span class=name>artifactId</span>&gt;</span>mybatis-generator-core<span class=tag>&lt;/<span class=name>artifactId</span>&gt;</span></span><br><span class=line>                       <span class=tag>&lt;<span class=name>version</span>&gt;</span>1.4.0<span class=tag>&lt;/<span class=name>version</span>&gt;</span></span><br><span class=line>                   <span class=tag>&lt;/<span class=name>dependency</span>&gt;</span></span><br><span class=line>               <span class=tag>&lt;/<span class=name>dependencies</span>&gt;</span></span><br><span class=line>               <span class=tag>&lt;<span class=name>configuration</span>&gt;</span></span><br><span class=line>                   <span class=tag>&lt;<span class=name>overwrite</span>&gt;</span>true<span class=tag>&lt;/<span class=name>overwrite</span>&gt;</span></span><br><span class=line>                   <span class=tag>&lt;<span class=name>verbose</span>&gt;</span>true<span class=tag>&lt;/<span class=name>verbose</span>&gt;</span></span><br><span class=line>                   <span class=tag>&lt;<span class=name>configurationFile</span>&gt;</span>src/main/resources/generatorConfig.xml<span class=tag>&lt;/<span class=name>configurationFile</span>&gt;</span></span><br><span class=line>               <span class=tag>&lt;/<span class=name>configuration</span>&gt;</span></span><br><span class=line>           <span class=tag>&lt;/<span class=name>plugin</span>&gt;</span></span><br></pre></td></tr></table></figure></div><div><ul class=post-copyright><li class=post-copyright-author><strong>本文作者：</strong>kkm</li><li class=post-copyright-link><strong>本文链接：</strong> <a href="https://www.kkmblog.com/posts/25308/" title=SpringBoot+mybatis+redis整合遇到的坑>https://www.kkmblog.com/posts/25308/</a></li><li class=post-copyright-license><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target=_blank><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><footer class=post-footer><div class=post-tags><a href="/tags/Java/" rel=tag><i class="fa fa-tag"></i> Java</a> <a href="/tags/SpringBoot/" rel=tag><i class="fa fa-tag"></i> SpringBoot</a> <a href="/tags/mybatis/" rel=tag><i class="fa fa-tag"></i> mybatis</a> <a href="/tags/redis/" rel=tag><i class="fa fa-tag"></i> redis</a></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href="/posts/10735/" rel=next title="后端蓝牙开发包bluecove 2.1.2版本"><i class="fa fa-chevron-left"></i> 后端蓝牙开发包bluecove 2.1.2版本</a></div><span class=post-nav-divider></span><div class="post-nav-prev post-nav-item"></div></div></footer></div></article></div></div><div class=comments id=comments></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside class=sidebar><div class=sidebar-inner><ul class="sidebar-nav motion-element"><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class="post-toc-wrap sidebar-panel"><div class="post-toc motion-element"><ol class=nav><li class="nav-item nav-level-2"><a class=nav-link href=#目录><span class=nav-text>目录</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#开发工具及环境><span class=nav-text>开发工具及环境</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#坑一：Consider-defining-a-bean-of-type-‘xx-xx-xx-dao-xxMapper’-in-your-configuration><span class=nav-text>坑一：Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration.</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#坑二：mybatis代码自动生成工具Exception-getting-JDBC-Driver><span class=nav-text>坑二：mybatis代码自动生成工具Exception getting JDBC Driver</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#坑三：数据存入redis-序列化的问题><span class=nav-text>坑三：数据存入redis 序列化的问题</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#坑四：maven执行install时自动运行mybatis-generator插件><span class=nav-text>坑四：maven执行install时自动运行mybatis-generator插件</span></a></li></ol></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/images/avatar.jpg alt=kkm><p class=site-author-name itemprop=name>kkm</p><div class=site-description itemprop=description>嗨！</div></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives/"><span class=site-state-item-count>8</span> <span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/"><span class=site-state-item-count>2</span> <span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class=site-state-item-count>9</span> <span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/kuke-z title="GitHub &rarr; https://github.com/kuke-z" rel="external nofollow noopener noreferrer" target=_blank><i class="fa fa-fw fa-github"></i>GitHub</a></span></div><div class="links-of-blogroll motion-element"><div class=links-of-blogroll-title><i class="fa fa-fw fa-link"></i> Links</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=http://0vv0.in title=http://0vv0.in rel="external nofollow noopener noreferrer" target=_blank>L1ngFeng</a></li></ul></div></div></div></aside><div id=sidebar-dimmer></div></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright>&copy; <span itemprop=copyrightYear>2020</span> <span class=with-love id=animate><i class="fa fa-user"></i></span> <span class=author itemprop=copyrightHolder>kkm</span></div><div class=powered-by>由 <a href=https://hexo.io class=theme-link rel="external nofollow noopener noreferrer" target=_blank>Hexo</a> 强力驱动 v3.9.0</div><span class=post-meta-divider>|</span><div class=theme-info>主题 – <a href=https://theme-next.org class=theme-link rel="external nofollow noopener noreferrer" target=_blank>NexT.Gemini</a> v7.4.0</div><div class=busuanzi-count><script async src=https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><span class=post-meta-item-icon><i class="fa fa-user"></i></span> <span class=site-uv title=总访客量><span class=busuanzi-value id=busuanzi_value_site_uv></span>人访问</span> <span class=post-meta-divider>|</span> <span class=post-meta-item-icon><i class="fa fa-eye"></i></span> <span class=site-pv title=总访问量><span class=busuanzi-value id=busuanzi_value_site_pv></span>次访问</span></div></div></footer></div><script color=255,0,0 opacity=0.5 zindex=-1 count=99 src=/lib/canvas-nest/canvas-nest.min.js></script><script src="/lib/anime.min.js?v=3.1.0"></script><script src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script><script src="/js/schemes/pisces.js?v=7.4.0"></script><script src="/js/next-boot.js?v=7.4.0"></script><script>
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kkm's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">hello World！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://www.kkmblog.com/posts/25308/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kkm">
+      <meta itemprop="description" content="嗨！">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkm's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">SpringBoot+mybatis+redis整合遇到的坑
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2020-01-21 06:45:49" itemprop="dateCreated datePublished" datetime="2020-01-21T06:45:49+08:00">2020-01-21</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/25308/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/posts/25308/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li>开发者工具</li>
+<li>Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration.</li>
+<li>mybatis代码自动生成工具Exception getting JDBC Driver</li>
+<li>数据存入redis 序列化的问题</li>
+<li>maven执行install时自动运行mybatis-generator插件</li>
+</ol>
+<a id="more"></a>
+
+<h2 id="开发工具及环境"><a href="#开发工具及环境" class="headerlink" title="开发工具及环境"></a>开发工具及环境</h2><p>工具：IDEA</p>
+<p>环境：SpringBoot、mybatis、JDK11、MySQL80、redis</p>
+<h2 id="坑一：Consider-defining-a-bean-of-type-‘xx-xx-xx-dao-xxMapper’-in-your-configuration"><a href="#坑一：Consider-defining-a-bean-of-type-‘xx-xx-xx-dao-xxMapper’-in-your-configuration" class="headerlink" title="坑一：Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration."></a>坑一：Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration.</h2><p>网上的解决方法大概有三种：</p>
+<ol>
+<li>在每个Mapper类上添加注解@Mapper，如</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Mapper</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TestMapper</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">deleteByPrimaryKey</span><span class="params">(String testId)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">insert</span><span class="params">(Test record)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">Test <span class="title">selectByPrimaryKey</span><span class="params">(String testId)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">List&lt;Test&gt; <span class="title">selectAll</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">updateByPrimaryKey</span><span class="params">(Test record)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>在SpringBoot启动类上添加注解@MapperScan(“xx.xx.xx.dao”)，引号内容是Mapper类所在的包名，如</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@MapperScan</span>(<span class="string">"com.gwg.bwtgame.dao"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(TestApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>在SpringBoot启动类上添加注解@ComponentScan( “xx.xx.xx.dao”)。注意此注解可以同时扫描多个包，格式为：@ComponentScan( {“xx.xx.xx.dao”, “xx.xx.xx.entity”})</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(<span class="string">"xx.xx.xx.dao"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestApplication</span> </span>&#123;s</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(TestApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>原因：bean注入失败，启动类和相应的包名没在同一级目录下，注解@SpringBootApplication只能扫描同级目录下以及子目录下的包。以下是正确的：</p>
+<p><img src="/posts/25308/%E5%90%8C%E7%BA%A7%E7%9B%AE%E5%BD%95.jpg" alt="目录"></p>
+<p>如果经过上述过程还没解决，请看一下你的maven是不是在使用IDEA默认的，如果是请自己下一个，改为自己的，IDEA默认的maven可能会有版本问题——这是在一个论坛上看到的，因为已经过去了一段时间，所以找不到那个网页了。我就是因为这个原因整整卡了两天。</p>
+<h2 id="坑二：mybatis代码自动生成工具Exception-getting-JDBC-Driver"><a href="#坑二：mybatis代码自动生成工具Exception-getting-JDBC-Driver" class="headerlink" title="坑二：mybatis代码自动生成工具Exception getting JDBC Driver"></a>坑二：mybatis代码自动生成工具Exception getting JDBC Driver</h2><p>这个是在使用mybatis-generator工具时遇到的，一直报错找不到JDBC驱动类，之后网上搜需要在pom文件里将generator插件改为如下配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.generator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-generator-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--以下dependencies标签中的内容是添加的内容--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.18<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.generator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-generator-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">overwrite</span>&gt;</span>true<span class="tag">&lt;/<span class="name">overwrite</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">verbose</span>&gt;</span>true<span class="tag">&lt;/<span class="name">verbose</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">configurationFile</span>&gt;</span>src/main/resources/generatorConfig.xml<span class="tag">&lt;/<span class="name">configurationFile</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="坑三：数据存入redis-序列化的问题"><a href="#坑三：数据存入redis-序列化的问题" class="headerlink" title="坑三：数据存入redis 序列化的问题"></a>坑三：数据存入redis 序列化的问题</h2><p>从<a href="https://www.imooc.com/video/11823" rel="external nofollow noopener noreferrer" target="_blank">慕课视频</a>开始学的redis缓存，然后又结合网上的例子开始写了。</p>
+<p>一开始开始采用重写RedisTemplete和自编RedisUtil工具类的方法去写，然后这种方法很难(可能是我不知道)与mybatis结合，必须自己实现dao接口。</p>
+<p>然后采用注解@Cacheable方式，这就很方便了，可以很容易结合mybatis。然后问题来了在@Cacheable( value=”test”,key=”‘getById’+#id”)是一直报错，一直说参数无法序列化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DefaultSerializer requires a Serializable payload but received an object of type</span><br></pre></td></tr></table></figure>
+
+<p>参数id类型为int甚至改为了String，都不行，然后网上找解决方法在<a href="https://www.cnblogs.com/cjsblog/p/9150482.html" rel="external nofollow noopener noreferrer" target="_blank">这里</a>直接将博主的RedisConfig配置类复制后就可以了，以下是我的和博主的对比：</p>
+<p>我的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> xx.xx.xx.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonAutoDetect;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.PropertyAccessor;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cache.annotation.CachingConfigurerSupport;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cache.annotation.EnableCaching;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cache.interceptor.KeyGenerator;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.cache.RedisCacheConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.cache.RedisCacheManager;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.cache.RedisCacheWriter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.connection.RedisConnectionFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.*;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.serializer.RedisSerializationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.serializer.StringRedisSerializer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableCaching</span> <span class="comment">//开启注解</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisConfig</span> <span class="keyword">extends</span> <span class="title">CachingConfigurerSupport</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RedisCacheManager <span class="title">cacheManager</span><span class="params">(RedisConnectionFactory redisConnectionFactory)</span></span>&#123;</span><br><span class="line">        RedisCacheConfiguration redisCacheConfiguration=RedisCacheConfiguration.defaultCacheConfig();</span><br><span class="line">        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer=<span class="keyword">new</span> Jackson2JsonRedisSerializer(Object.class);</span><br><span class="line">        redisCacheConfiguration.serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(jackson2JsonRedisSerializer));</span><br><span class="line">        redisCacheConfiguration.serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(<span class="keyword">new</span> StringRedisSerializer()));</span><br><span class="line">        <span class="keyword">return</span> RedisCacheManager</span><br><span class="line">                .builder(RedisCacheWriter.nonLockingRedisCacheWriter(redisConnectionFactory))</span><br><span class="line">                .cacheDefaults(redisCacheConfiguration).build();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@ConditionalOnMissingBean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RedisTemplate&lt;String,Object&gt; <span class="title">redisTemplate</span><span class="params">(RedisConnectionFactory redisConnectionFactory)</span> </span>&#123;</span><br><span class="line">        StringRedisSerializer stringRedisSerializer=<span class="keyword">new</span> StringRedisSerializer();</span><br><span class="line">        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer=<span class="keyword">new</span> Jackson2JsonRedisSerializer(Object.class);</span><br><span class="line">        RedisTemplate&lt;String ,Object&gt; redisTemplate=<span class="keyword">new</span> RedisTemplate&lt;&gt;();</span><br><span class="line">        redisTemplate.setConnectionFactory(redisConnectionFactory);</span><br><span class="line">        redisTemplate.setEnableTransactionSupport(<span class="keyword">true</span>);</span><br><span class="line">        ObjectMapper objectMapper=<span class="keyword">new</span> ObjectMapper();</span><br><span class="line">        objectMapper.setVisibility(PropertyAccessor.ALL,JsonAutoDetect.Visibility.ANY);</span><br><span class="line">        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);</span><br><span class="line">        jackson2JsonRedisSerializer.setObjectMapper(objectMapper);</span><br><span class="line"></span><br><span class="line">        redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);</span><br><span class="line">        redisTemplate.setKeySerializer(<span class="keyword">new</span> StringRedisSerializer());</span><br><span class="line">        redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);</span><br><span class="line">        redisTemplate.setHashKeySerializer(<span class="keyword">new</span> StringRedisSerializer());</span><br><span class="line">        redisTemplate.afterPropertiesSet();</span><br><span class="line">        <span class="keyword">return</span> redisTemplate;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * hash类型配置</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> HashOperations&lt;String, String, Object&gt; <span class="title">hashOperations</span><span class="params">(RedisTemplate&lt;String, Object&gt; redisTemplate)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> redisTemplate.opsForHash();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对redis字符串类型数据操作</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ValueOperations&lt;String, Object&gt; <span class="title">valueOperations</span><span class="params">(RedisTemplate&lt;String, Object&gt; redisTemplate)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> redisTemplate.opsForValue();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对链表类型的数据操作</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListOperations&lt;String, Object&gt; <span class="title">listOperations</span><span class="params">(RedisTemplate&lt;String, Object&gt; redisTemplate)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> redisTemplate.opsForList();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对无序集合类型的数据操作</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> SetOperations&lt;String, Object&gt; <span class="title">setOperations</span><span class="params">(RedisTemplate&lt;String, Object&gt; redisTemplate)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> redisTemplate.opsForSet();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 对有序集合类型的数据操作</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ZSetOperations&lt;String, Object&gt; <span class="title">zSetOperations</span><span class="params">(RedisTemplate&lt;String, Object&gt; redisTemplate)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> redisTemplate.opsForZSet();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>博主的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> xx.xx.xx.config;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonAutoDetect;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.PropertyAccessor;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cache.annotation.CachingConfigurerSupport;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cache.annotation.EnableCaching;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.cache.RedisCacheConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.cache.RedisCacheManager;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.cache.RedisCacheWriter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.connection.RedisConnectionFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.RedisTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.serializer.RedisSerializationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.serializer.StringRedisSerializer;</span><br><span class="line"><span class="meta">@EnableCaching</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisConfig</span> <span class="keyword">extends</span> <span class="title">CachingConfigurerSupport</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RedisConnectionFactory redisConnectionFactory;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RedisTemplate&lt;String, Object&gt; <span class="title">redisTemplate</span><span class="params">(RedisConnectionFactory redisConnectionFactory)</span> </span>&#123;</span><br><span class="line">        Jackson2JsonRedisSerializer&lt;Object&gt; serializer = <span class="keyword">new</span> Jackson2JsonRedisSerializer&lt;Object&gt;(Object.class);</span><br><span class="line">        ObjectMapper objectMapper = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line">        objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);</span><br><span class="line">        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);</span><br><span class="line">        serializer.setObjectMapper(objectMapper);</span><br><span class="line">        RedisTemplate&lt;String, Object&gt; redisTemplate = <span class="keyword">new</span> RedisTemplate&lt;&gt;();</span><br><span class="line">        redisTemplate.setConnectionFactory(redisConnectionFactory);</span><br><span class="line">        redisTemplate.setKeySerializer(<span class="keyword">new</span> StringRedisSerializer());</span><br><span class="line">        redisTemplate.setValueSerializer(serializer);</span><br><span class="line">        redisTemplate.setHashKeySerializer(<span class="keyword">new</span> StringRedisSerializer());</span><br><span class="line">        redisTemplate.setHashValueSerializer(serializer);</span><br><span class="line">        redisTemplate.afterPropertiesSet();</span><br><span class="line">        <span class="keyword">return</span> redisTemplate;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RedisCacheManager <span class="title">redisCacheManager</span><span class="params">(RedisTemplate redisTemplate)</span> </span>&#123;</span><br><span class="line">        RedisCacheWriter redisCacheWriter = RedisCacheWriter.nonLockingRedisCacheWriter(redisTemplate.getConnectionFactory());</span><br><span class="line">        RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig()</span><br><span class="line">                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(redisTemplate.getValueSerializer()));</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> RedisCacheManager(redisCacheWriter, redisCacheConfiguration);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 二者选其一即可</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="comment">//    @Bean</span></span><br><span class="line"><span class="comment">//    public RedisCacheConfiguration redisCacheConfiguration() &#123;</span></span><br><span class="line"><span class="comment">//        Jackson2JsonRedisSerializer&lt;Object&gt; serializer = new Jackson2JsonRedisSerializer&lt;Object&gt;(Object.class);</span></span><br><span class="line"><span class="comment">//        ObjectMapper objectMapper = new ObjectMapper();</span></span><br><span class="line"><span class="comment">//        objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);</span></span><br><span class="line"><span class="comment">//        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);</span></span><br><span class="line"><span class="comment">//        serializer.setObjectMapper(objectMapper);</span></span><br><span class="line"><span class="comment">//        return RedisCacheConfiguration.defaultCacheConfig().serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(serializer));</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在还是有点迷糊，不知道哪里配置不对了，key和value也都设置了序列化机制，但不知为什么不生效。不过现在是可以了，以后再研究。</p>
+<h2 id="坑四：maven执行install时自动运行mybatis-generator插件"><a href="#坑四：maven执行install时自动运行mybatis-generator插件" class="headerlink" title="坑四：maven执行install时自动运行mybatis-generator插件"></a>坑四：maven执行install时自动运行mybatis-generator插件</h2><p>后台代码写了个测试demo，可运行，想想着打包在服务器上运行试试，然后maven的clean、install，打包成功，有warning，没管，然后本地运行，报错找不到mapper类的bean，然后去看mapper的配置文件，发现里边有两个一模一样的bean，熟悉的配方，确认是代码生成工具的锅，删掉多余的，运行成功，然后又clean、install、运行有报错、找不到bean、看来是generator工具会自动在install时运行，找资料，相关博文貌似不是很多，但还是解决了一下摘自<a href="https://blog.csdn.net/luckyxl029/article/details/77180285" rel="external nofollow noopener noreferrer" target="_blank">使用mybatis-generator插件后的maven打包问题</a>:</p>
+<p>原因：是因为mybatis-generator插件默认绑定了package的生命周期</p>
+<p>解决：在pom中手动设置一下mybatis-generator插件绑定的生命周期即可</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.generator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-generator-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    		<span class="comment">&lt;!--解决mybatis代码自动生成工具随maven打包运行的问题--&gt;</span></span><br><span class="line">    			<span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">  					<span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">       				<span class="tag">&lt;<span class="name">id</span>&gt;</span>Generate MyBatis Artifacts<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">       				<span class="tag">&lt;<span class="name">phase</span>&gt;</span>deploy<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></span><br><span class="line">                       <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">                           <span class="tag">&lt;<span class="name">goal</span>&gt;</span>generate<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">                       <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">                   <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">                   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">                       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                       <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.18<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                       <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">                   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">                   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">                       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.generator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-generator-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                       <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                   <span class="tag">&lt;<span class="name">overwrite</span>&gt;</span>true<span class="tag">&lt;/<span class="name">overwrite</span>&gt;</span></span><br><span class="line">                   <span class="tag">&lt;<span class="name">verbose</span>&gt;</span>true<span class="tag">&lt;/<span class="name">verbose</span>&gt;</span></span><br><span class="line">                   <span class="tag">&lt;<span class="name">configurationFile</span>&gt;</span>src/main/resources/generatorConfig.xml<span class="tag">&lt;/<span class="name">configurationFile</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>kkm</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.kkmblog.com/posts/25308/" title="SpringBoot+mybatis+redis整合遇到的坑">https://www.kkmblog.com/posts/25308/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+            
+              <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-tag"></i> SpringBoot</a>
+            
+              <a href="/tags/mybatis/" rel="tag"><i class="fa fa-tag"></i> mybatis</a>
+            
+              <a href="/tags/redis/" rel="tag"><i class="fa fa-tag"></i> redis</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/posts/10735/" rel="next" title="后端蓝牙开发包bluecove 2.1.2版本">
+                  <i class="fa fa-chevron-left"></i> 后端蓝牙开发包bluecove 2.1.2版本
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+	  
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发工具及环境"><span class="nav-text">开发工具及环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坑一：Consider-defining-a-bean-of-type-‘xx-xx-xx-dao-xxMapper’-in-your-configuration"><span class="nav-text">坑一：Consider defining a bean of type ‘xx.xx.xx.dao.xxMapper’ in your configuration.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坑二：mybatis代码自动生成工具Exception-getting-JDBC-Driver"><span class="nav-text">坑二：mybatis代码自动生成工具Exception getting JDBC Driver</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坑三：数据存入redis-序列化的问题"><span class="nav-text">坑三：数据存入redis 序列化的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坑四：maven执行install时自动运行mybatis-generator插件"><span class="nav-text">坑四：maven执行install时自动运行mybatis-generator插件</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="kkm">
+  <p class="site-author-name" itemprop="name">kkm</p>
+  <div class="site-description" itemprop="description">嗨！</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/kuke-z" title="GitHub &rarr; https://github.com/kuke-z" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://0vv0.in" title="http://0vv0.in" rel="external nofollow noopener noreferrer" target="_blank">L1ngFeng</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+	  
+    </div>
+	
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kkm</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> v7.4.0</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人访问
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次访问
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+    
+  
+  <script color="255,0,0" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+  <script>
     (function(){
       var bp = document.createElement('script');
       var curProtocol = window.location.protocol.split(':')[0];
@@ -75,7 +669,38 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(bp, s);
     })();
-  </script><script src="/js/local-search.js?v=7.4.0"></script><script>
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
 NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
   var GUEST = ['nick', 'mail', 'link'];
   var guest = 'nick,mail,link';
@@ -97,4 +722,9 @@ NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
     path: location.pathname
   });
 }, window.Valine);
-</script><script src=/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body></html><script type=text/javascript src=/js/clicklove.js></script>
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/clicklove.js"></script>
