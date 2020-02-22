@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>SpringBoot+mybatis+redis整合遇到的坑</title>
+    <title>SpringBoot+mybatis+redis 整合遇到的坑</title>
     <url>/posts/25308/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
 <li>开发者工具</li>
@@ -210,12 +210,12 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="音频视频测试"><a href="#音频视频测试" class="headerlink" title="音频视频测试"></a>音频视频测试</h1><a id="more"></a>
 
 <h1 id="单曲"><a href="#单曲" class="headerlink" title="单曲"></a>单曲</h1>
-    <div id="aplayer-kQMFucbE" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="16607987" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
+    <div id="aplayer-aLuxAZfu" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="16607987" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
 
 
 
 <h1 id="歌单"><a href="#歌单" class="headerlink" title="歌单"></a>歌单</h1>
-    <div id="aplayer-yLcnwizE" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="2410118238" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
+    <div id="aplayer-ljUqAxcg" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="2410118238" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
 
 
 
