@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>记项目中一些细节性的问题</title>
+    <url>/posts/c7433268/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ol>
+<li>@Jsonformat注解</li>
+<li>@Scheduled注解定时任务不执行</li>
+<li>Java对象null判定位置</li>
+</ol>
+<a id="more"></a>
+
+<h1 id="Jsonformat注解"><a href="#Jsonformat注解" class="headerlink" title="@Jsonformat注解"></a>@Jsonformat注解</h1><p>使用@Jsonformat注解格式化输出日期时出现了一个小问题，以此记录：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//具体使用</span></span><br><span class="line"><span class="meta">@Jsonformat</span>(patten<span class="string">"YYYY/MM/DD HH:MM:SS"</span>, timezone=<span class="string">"GMT+8"</span>)</span><br><span class="line"><span class="keyword">private</span> Date date;</span><br></pre></td></tr></table></figure>
+
+<p>乍一看没问题，但是输出的日期不对,大概是这样</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//按理应该输出的</span></span><br><span class="line"><span class="number">2000</span>/<span class="number">03</span>/<span class="number">01</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line"><span class="comment">//实际输出的(类似这样的，就不复现了)</span></span><br><span class="line"><span class="number">2000</span>/<span class="number">03</span>/<span class="number">167</span> <span class="number">02</span>:<span class="number">10</span>:<span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<p>在网上找了很久都没找到类似这样的错误，多是时区出问题的；</p>
+<p>具体解决：</p>
+<p>之前进了一个比较活跃的java电报群，就在里边问了问，有位大佬说看到过是格式控制的大小写不能改动，我去试了，确实，正确的格式应该是<code>yyyy/MM/dd HH:mm:ss</code>或者<code>yyyy-MM-dd HH:mm:ss</code>，又有一位大佬说这个jdk接口文档里有，jdk11的文档里没提到大小写相关的内容，但有对格式的要求，不知JDK1.8的文档里有无，然后又找了找Jackson 的<a href="https://github.com/FasterXML/jackson-annotations/wiki/Jackson-Annotations" rel="external nofollow noopener noreferrer" target="_blank">文档</a>，很难找，找到的也很简陋，也没找到。</p>
+<h1 id="Scheduled注解定时计划任务不执行"><a href="#Scheduled注解定时计划任务不执行" class="headerlink" title="@Scheduled注解定时计划任务不执行"></a>@Scheduled注解定时计划任务不执行</h1><p>项目需要一些简单的定时任务，就用了@Scheduled注解，然而怎么改，就是不执行，网上的各种配置都试过了，不论是新建配置类还是仅仅只用注解，可就是不执行定时任务，直到我把定时任务类所在的包加入了扫描。</p>
+<p>定时任务类：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.gwg.bwtgame.scheduletask;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.gwg.bwtgame.dao.DailyTaskMapper;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.scheduling.annotation.Async;</span><br><span class="line"><span class="keyword">import</span> org.springframework.scheduling.annotation.EnableAsync;</span><br><span class="line"><span class="keyword">import</span> org.springframework.scheduling.annotation.EnableScheduling;</span><br><span class="line"><span class="keyword">import</span> org.springframework.scheduling.annotation.Scheduled;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@EnableScheduling</span></span><br><span class="line"><span class="meta">@EnableAsync</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScheduleTask</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> DailyTaskMapper dailyTaskMapper;</span><br><span class="line"></span><br><span class="line"><span class="comment">//  每天5点刷新每日任务</span></span><br><span class="line">    <span class="meta">@Async</span>  </span><br><span class="line">    <span class="meta">@Scheduled</span>(cron = <span class="string">"0 0 5 * * ?"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dailyTask</span><span class="params">()</span></span>&#123;</span><br><span class="line">        dailyTaskMapper.updateDailyTask();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>启动类</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ComponentScan</span>(&#123;<span class="string">"com.gwg.bwtgame.scheduletask"</span>&#125;)</span><br><span class="line"><span class="meta">@EnableScheduling</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BwtgameApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(BwtgameApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>、</p>
+<h1 id="Java对象null判定位置"><a href="#Java对象null判定位置" class="headerlink" title="Java对象null判定位置"></a>Java对象null判定位置</h1><p>这个就非常基础了，但是没注意还是出错了，所以记录一下。关于对象值为null的判定一定要放在对对象进行操作前：如下</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFirstARads</span><span class="params">(<span class="keyword">int</span> bearId)</span> </span>&#123;</span><br><span class="line">    dailyTask=dailyTaskMapper.selectByPrimaryKey(bearId);</span><br><span class="line">    bear=bearMapper.selectByPrimaryKey(bearId);</span><br><span class="line">    <span class="keyword">if</span> (dailyTask.getWatchArAds()==<span class="number">0</span>&amp;&amp;dailyTask!=<span class="keyword">null</span>&amp;&amp;bear!=<span class="keyword">null</span>)&#123;<span class="comment">//报错这里有问题 空对象</span></span><br><span class="line">        <span class="comment">//具体操作</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一开始没反应过来：我也判定对象值不为null了啊，细看代码，出大问题了：</p>
+<p>按Java代码运行逻辑，同一行代码都是自左向右先后运行的，而我却将对象null值的判定放在了对象操作之后，所报错，所以争取的顺序是<code>dailyTask!=null&amp;&amp;bear!=null&amp;&amp;dailyTask.getWatchArAds()==0</code>或<code>bear!=null&amp;&amp;dailyTask!=null&amp;&amp;dailyTask.getWatchArAds()==0</code></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>看上边出现的问题，还是一些比较基础性、细节性的的问题，正所谓基础不牢，地动山摇；当然也不是没有其他问题，只是其他问题都百度解决了，只剩下这些基础性的、百度上没有的，仅此记录一下。</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>SpringBoot</tag>
+        <tag>Jsonformat</tag>
+        <tag>Scheduled</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SpringBoot + mybatis + redis 整合遇到的坑</title>
     <url>/posts/25308/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
@@ -210,12 +254,12 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="音频视频测试"><a href="#音频视频测试" class="headerlink" title="音频视频测试"></a>音频视频测试</h1><a id="more"></a>
 
 <h1 id="单曲"><a href="#单曲" class="headerlink" title="单曲"></a>单曲</h1>
-    <div id="aplayer-kLIpJMeV" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="16607987" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
+    <div id="aplayer-MSmqTqVp" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="16607987" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
 
 
 
 <h1 id="歌单"><a href="#歌单" class="headerlink" title="歌单"></a>歌单</h1>
-    <div id="aplayer-RfeieyaL" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="2410118238" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
+    <div id="aplayer-MjMwbfhk" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="2410118238" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#555"></div>
 
 
 

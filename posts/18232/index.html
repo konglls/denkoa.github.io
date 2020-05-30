@@ -1,4 +1,30 @@
-<!DOCTYPE html><html lang=zh-Hans><head><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=2"><meta name=theme-color content=#222><meta name=generator content="Hexo 3.9.0"><script data-ad-client=ca-pub-5811805760094857 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><link rel=apple-touch-icon sizes=180x180 href="/images/apple-touch-icon-next.png?v=7.4.0"><link rel=icon type=image/png sizes=32x32 href="/images/k.jpg?v=7.4.0"><link rel=icon type=image/png sizes=16x16 href="/images/k.jpg?v=7.4.0"><link rel=mask-icon href="/images/logo.svg?v=7.4.0" color=#222><meta name=baidu-site-verification content=OQKX8NmvKW><link rel=stylesheet href="/css/main.css?v=7.4.0"><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css><script id=hexo-configurations>
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+
+<script data-ad-client="ca-pub-5811805760094857" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/k.jpg?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/k.jpg?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+  <meta name="baidu-site-verification" content="OQKX8NmvKW">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
@@ -30,7 +56,27 @@
     },
     sidebarPadding: 40
   };
-</script><meta name=description content=问题之前学后端一直是与Web页面交互，然后最近需要与移动度交互，有点陌生，就问学Android的同学是怎样交换数据的，他说根据url获取数据，json格式。感觉和Web的交互方式差不多，除了json格式，原先没用过。然后就看了下怎样用json交换数据，正好项目用的是ssm框架，@RequestBody和@ResponseBody可以实现json数据与实体类的相互转换，就偷了懒，反正只要key与属性><meta name=keywords content=Java,Android><meta property=og:type content=article><meta property=og:title content=后端与移动端对接遇到的问题><meta property=og:url content=https://www.kkmblog.com/posts/18232/index.html><meta property=og:site_name content="kkm&#39;s Blog"><meta property=og:description content=问题之前学后端一直是与Web页面交互，然后最近需要与移动度交互，有点陌生，就问学Android的同学是怎样交换数据的，他说根据url获取数据，json格式。感觉和Web的交互方式差不多，除了json格式，原先没用过。然后就看了下怎样用json交换数据，正好项目用的是ssm框架，@RequestBody和@ResponseBody可以实现json数据与实体类的相互转换，就偷了懒，反正只要key与属性><meta property=og:locale content=zh-Hans><meta property=og:image content=https://www.kkmblog.com/posts/18232/%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82.png><meta property=og:image content=https://www.kkmblog.com/posts/18232/%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE.png><meta property=og:updated_time content=2020-02-16T19:01:07.719Z><meta name=twitter:card content=summary><meta name=twitter:title content=后端与移动端对接遇到的问题><meta name=twitter:description content=问题之前学后端一直是与Web页面交互，然后最近需要与移动度交互，有点陌生，就问学Android的同学是怎样交换数据的，他说根据url获取数据，json格式。感觉和Web的交互方式差不多，除了json格式，原先没用过。然后就看了下怎样用json交换数据，正好项目用的是ssm框架，@RequestBody和@ResponseBody可以实现json数据与实体类的相互转换，就偷了懒，反正只要key与属性><meta name=twitter:image content=https://www.kkmblog.com/posts/18232/%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82.png><link rel=canonical href="https://www.kkmblog.com/posts/18232/"><script id=page-configurations>
+</script>
+
+  <meta name="description" content="问题之前学后端一直是与Web页面交互，然后最近需要与移动度交互，有点陌生，就问学Android的同学是怎样交换数据的，他说根据url获取数据，json格式。感觉和Web的交互方式差不多，除了json格式，原先没用过。然后就看了下怎样用json交换数据，正好项目用的是ssm框架，@RequestBody和@ResponseBody可以实现json数据与实体类的相互转换，就偷了懒，反正只要key与属性">
+<meta name="keywords" content="Java,Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="后端与移动端对接遇到的问题">
+<meta property="og:url" content="https://www.kkmblog.com/posts/18232/index.html">
+<meta property="og:site_name" content="kkm&#39;s Blog">
+<meta property="og:description" content="问题之前学后端一直是与Web页面交互，然后最近需要与移动度交互，有点陌生，就问学Android的同学是怎样交换数据的，他说根据url获取数据，json格式。感觉和Web的交互方式差不多，除了json格式，原先没用过。然后就看了下怎样用json交换数据，正好项目用的是ssm框架，@RequestBody和@ResponseBody可以实现json数据与实体类的相互转换，就偷了懒，反正只要key与属性">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.kkmblog.com/posts/18232/%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82.png">
+<meta property="og:image" content="https://www.kkmblog.com/posts/18232/%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE.png">
+<meta property="og:updated_time" content="2020-02-16T19:01:07.719Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="后端与移动端对接遇到的问题">
+<meta name="twitter:description" content="问题之前学后端一直是与Web页面交互，然后最近需要与移动度交互，有点陌生，就问学Android的同学是怎样交换数据的，他说根据url获取数据，json格式。感觉和Web的交互方式差不多，除了json格式，原先没用过。然后就看了下怎样用json交换数据，正好项目用的是ssm框架，@RequestBody和@ResponseBody可以实现json数据与实体类的相互转换，就偷了懒，反正只要key与属性">
+<meta name="twitter:image" content="https://www.kkmblog.com/posts/18232/%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82.png">
+  <link rel="canonical" href="https://www.kkmblog.com/posts/18232/">
+
+
+<script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -39,7 +85,13 @@
     isPage: false,
     isArchive: false
   };
-</script><title>后端与移动端对接遇到的问题 | kkm's Blog</title><script>
+</script>
+
+  <title>后端与移动端对接遇到的问题 | kkm's Blog</title>
+  
+
+
+  <script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -47,7 +99,15 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script><noscript><style>
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -67,9 +127,535 @@
 
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
-  </style></noscript></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-Hans><div class="container use-motion"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-meta><div><a href="/" class=brand rel=start><span class=logo-line-before><i></i></span> <span class=site-title>kkm's Blog</span> <span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>hello World！</p></div><div class=site-nav-toggle><button aria-label=切换导航栏><span class=btn-bar></span> <span class=btn-bar></span> <span class=btn-bar></span></button></div></div><nav class=site-nav><ul id=menu class=menu><li class="menu-item menu-item-home"><a href="/" rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel=section><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel=section><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul></nav><div class=site-search><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocorrect=off autocapitalize=none placeholder=搜索... spellcheck=false type=text id=search-input></div><span class=popup-btn-close><i class="fa fa-times-circle"></i></span></div><div id=search-result></div></div><div class=search-pop-overlay></div></div></div></header><div class=back-to-top><i class="fa fa-arrow-up"></i> <span>0%</span></div><div class=reading-progress-bar></div><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><div id=posts class=posts-expand><article itemscope itemtype=http://schema.org/Article><div class="post-block post"><link itemprop=mainEntityOfPage href="https://www.kkmblog.com/posts/18232/"><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=name content=kkm><meta itemprop=description content=嗨！><meta itemprop=image content=/images/avatar.jpg></span> <span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="kkm's Blog"></span><header class=post-header><h1 class=post-title itemprop="name headline">后端与移动端对接遇到的问题</h1><div class=post-meta><span class=post-meta-item><span class=post-meta-item-icon><i class="fa fa-calendar-o"></i></span> <span class=post-meta-item-text>发表于</span><time title="创建时间：2019-11-05 19:28:44" itemprop="dateCreated datePublished" datetime=2019-11-05T19:28:44+08:00>2019-11-05</time></span> <span class=post-meta-item><span class=post-meta-item-icon><i class="fa fa-folder-o"></i></span> <span class=post-meta-item-text>分类于</span> <span itemprop=about itemscope itemtype=http://schema.org/Thing><a href="/categories/笔记/" itemprop=url rel=index><span itemprop=name>笔记</span></a></span></span> <span class=post-meta-item title=阅读次数><span class=post-meta-item-icon><i class="fa fa-eye"></i></span> <span class=post-meta-item-text>阅读次数：</span> <span class=busuanzi-value id=busuanzi_value_page_pv></span></span> <span class=post-meta-item><span class=post-meta-item-icon><i class="fa fa-comment-o"></i></span> <span class=post-meta-item-text>Valine：</span> <a title=valine href=/posts/18232/#comments itemprop=discussionUrl><span class="post-comments-count valine-comment-count" data-xid="/posts/18232/" itemprop=commentCount></span></a></span></div></header><div class=post-body itemprop=articleBody><h2 id=问题><a href=#问题 class=headerlink title=问题></a>问题</h2><p>之前学后端一直是与Web页面交互，然后最近需要与移动度交互，有点陌生，就问学Android的同学是怎样交换数据的，他说根据url获取数据，json格式。感觉和Web的交互方式差不多，除了json格式，原先没用过。然后就看了下怎样用json交换数据，正好项目用的是ssm框架，@RequestBody和@ResponseBody可以实现json数据与实体类的相互转换，就偷了懒，反正只要key与属性名保持一致就行，还不用自己去拼接了。然后这几天与同学对接时遇到了问题，就测试登录，然后可以连上服务器，但一登陆就崩。不知道咋回事。之后，同学调试时发现得到了415错误，媒体类型不支持，相互确认都用了json传输接收数据，还是不行。<a id=more></a></p><h2 id=解决><a href=#解决 class=headerlink title=解决></a>解决</h2><p>第二天又凑到一起搞这个时，突然发现我后端的后台有报错，也是媒体类型错误，同时报错不支持<code>Content-Type=application/x-www-form-urlencoded</code>，这才算知道问题出在了哪里，接收、发送数据的编码格式不对，我后端的代码要求的是<code>Content-Type=application/json</code>（貌似用了那两个注解也只能这样？），知道了问题在哪就好办了，不过也还是弄了一下午，因为同学用了不太熟悉的依赖，查了半天也不知道怎么设置，最终又改回了之前熟悉的才解决问题，不过还好，只是换依赖花的时间长，另外，他之前只是在写页面没有对数据进行处理，所以改动不是很大，不像我后端已经把数据搞好了，要改的话还得大改。</p><h2 id=总结><a href=#总结 class=headerlink title=总结></a>总结</h2><ol><li><p>基础不扎实，毕竟半路出家，没有经过系统的学习。</p></li><li><p>出错一定要看后台，不管是否是自己这边的错误。就比如这个问题，要是我早点看后台也不至于第二天才发现这个问题。</p></li><li><p>与他人沟通时，一些细节性的东西一定要确认清楚。</p></li></ol><h2 id=另：><a href=#另： class=headerlink title=另：></a>另：</h2><p>用了那两个注解不能传空值null，会报错，一般情况下如果拼接json数据的话不会产生这种情况毕竟自己手打，毕竟可以确定键值不为空。还没想到什么好方法，以后想到了再更新吧。</p><h2 id=更新><a href=#更新 class=headerlink title=更新></a>更新</h2><p>上述问题解决方法：</p><p>一个Result类：</p><table><thead><tr><th>属性</th><th>方法</th></tr></thead><tbody><tr><td></td><td>Result(); (构造函数初始化result和data)</td></tr><tr><td>private String result;</td><td>getter/setter</td></tr><tr><td>private TbUser data;</td><td>getter/setter</td></tr></tbody></table><p>请求形式：（PS:请求不用这么麻烦，我这里是为了测试@RequestBody能否接受嵌套数据）</p><p><img src=/posts/18232/%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82.png alt=请求数据></p><p>返回数据形式：</p><p><img src=/posts/18232/%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE.png alt=返回数据></p></div><div><ul class=post-copyright><li class=post-copyright-author><strong>本文作者：</strong>kkm</li><li class=post-copyright-link><strong>本文链接：</strong> <a href="https://www.kkmblog.com/posts/18232/" title=后端与移动端对接遇到的问题>https://www.kkmblog.com/posts/18232/</a></li><li class=post-copyright-license><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target=_blank><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><footer class=post-footer><div class=post-tags><a href="/tags/Java/" rel=tag><i class="fa fa-tag"></i> Java</a> <a href="/tags/Android/" rel=tag><i class="fa fa-tag"></i> Android</a></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href="/posts/1599/" rel=next title=hexo文章同时部署到github和个人服务器><i class="fa fa-chevron-left"></i> hexo文章同时部署到github和个人服务器</a></div><span class=post-nav-divider></span><div class="post-nav-prev post-nav-item"><a href="/posts/10735/" rel=prev title="后端蓝牙开发包bluecove 2.1.2版本">后端蓝牙开发包bluecove 2.1.2版本 <i class="fa fa-chevron-right"></i></a></div></div></footer></div></article></div></div><div class=comments id=comments></div><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-5811805760094857 data-ad-slot=5398553101 data-ad-format=auto data-full-width-responsive=true></ins><script>
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kkm's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">hello World！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://www.kkmblog.com/posts/18232/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kkm">
+      <meta itemprop="description" content="嗨！">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kkm's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">后端与移动端对接遇到的问题
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-05 19:28:44" itemprop="dateCreated datePublished" datetime="2019-11-05T19:28:44+08:00">2019-11-05</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/18232/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/posts/18232/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>之前学后端一直是与Web页面交互，然后最近需要与移动度交互，有点陌生，就问学Android的同学是怎样交换数据的，他说根据url获取数据，json格式。感觉和Web的交互方式差不多，除了json格式，原先没用过。然后就看了下怎样用json交换数据，正好项目用的是ssm框架，@RequestBody和@ResponseBody可以实现json数据与实体类的相互转换，就偷了懒，反正只要key与属性名保持一致就行，还不用自己去拼接了。然后这几天与同学对接时遇到了问题，就测试登录，然后可以连上服务器，但一登陆就崩。不知道咋回事。之后，同学调试时发现得到了415错误，媒体类型不支持，相互确认都用了json传输接收数据，还是不行。<a id="more"></a></p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>第二天又凑到一起搞这个时，突然发现我后端的后台有报错，也是媒体类型错误，同时报错不支持<code>Content-Type=application/x-www-form-urlencoded</code>，这才算知道问题出在了哪里，接收、发送数据的编码格式不对，我后端的代码要求的是<code>Content-Type=application/json</code>（貌似用了那两个注解也只能这样？），知道了问题在哪就好办了，不过也还是弄了一下午，因为同学用了不太熟悉的依赖，查了半天也不知道怎么设置，最终又改回了之前熟悉的才解决问题，不过还好，只是换依赖花的时间长，另外，他之前只是在写页面没有对数据进行处理，所以改动不是很大，不像我后端已经把数据搞好了，要改的话还得大改。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li><p>基础不扎实，毕竟半路出家，没有经过系统的学习。</p>
+</li>
+<li><p>出错一定要看后台，不管是否是自己这边的错误。就比如这个问题，要是我早点看后台也不至于第二天才发现这个问题。</p>
+</li>
+<li><p>与他人沟通时，一些细节性的东西一定要确认清楚。</p>
+</li>
+</ol>
+<h2 id="另："><a href="#另：" class="headerlink" title="另："></a>另：</h2><p>用了那两个注解不能传空值null，会报错，一般情况下如果拼接json数据的话不会产生这种情况毕竟自己手打，毕竟可以确定键值不为空。还没想到什么好方法，以后想到了再更新吧。</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>上述问题解决方法：</p>
+<p> 一个Result类：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>Result();      (构造函数初始化result和data)</td>
+</tr>
+<tr>
+<td>private String result;</td>
+<td>getter/setter</td>
+</tr>
+<tr>
+<td>private TbUser data;</td>
+<td>getter/setter</td>
+</tr>
+</tbody></table>
+<p>请求形式：（PS:请求不用这么麻烦，我这里是为了测试@RequestBody能否接受嵌套数据）</p>
+<p><img src="/posts/18232/%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82.png" alt="请求数据"></p>
+<p>返回数据形式：</p>
+<p><img src="/posts/18232/%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE.png" alt="返回数据"></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>kkm</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.kkmblog.com/posts/18232/" title="后端与移动端对接遇到的问题">https://www.kkmblog.com/posts/18232/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+            
+              <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/posts/1599/" rel="next" title="hexo文章同时部署到github和个人服务器">
+                  <i class="fa fa-chevron-left"></i> hexo文章同时部署到github和个人服务器
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/posts/10735/" rel="prev" title="后端蓝牙开发包bluecove 2.1.2版本">
+                  后端蓝牙开发包bluecove 2.1.2版本 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+  	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- first -->
+	<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5811805760094857" data-ad-slot="5398553101" data-ad-format="auto" data-full-width-responsive="true"></ins>
+	<script>
 	     (adsbygoogle = window.adsbygoogle || []).push({});
-	</script></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside class=sidebar><div class=sidebar-inner><ul class="sidebar-nav motion-element"><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class="post-toc-wrap sidebar-panel"><div class="post-toc motion-element"><ol class=nav><li class="nav-item nav-level-2"><a class=nav-link href=#问题><span class=nav-text>问题</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#解决><span class=nav-text>解决</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#总结><span class=nav-text>总结</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#另：><span class=nav-text>另：</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#更新><span class=nav-text>更新</span></a></li></ol></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/images/avatar.jpg alt=kkm><p class=site-author-name itemprop=name>kkm</p><div class=site-description itemprop=description>嗨！</div></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives/"><span class=site-state-item-count>8</span> <span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/"><span class=site-state-item-count>2</span> <span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class=site-state-item-count>9</span> <span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/kuke-z title="GitHub &rarr; https://github.com/kuke-z" rel="external nofollow noopener noreferrer" target=_blank><i class="fa fa-fw fa-github"></i>GitHub</a></span></div><div class="links-of-blogroll motion-element"><div class=links-of-blogroll-title><i class="fa fa-fw fa-link"></i> Links</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=http://0vv0.in title=http://0vv0.in rel="external nofollow noopener noreferrer" target=_blank>L1ngFeng</a></li></ul></div></div></div></aside><div id=sidebar-dimmer></div></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright>&copy; <span itemprop=copyrightYear>2020</span> <span class=with-love id=animate><i class="fa fa-user"></i></span> <span class=author itemprop=copyrightHolder>kkm</span></div><div class=powered-by>由 <a href=https://hexo.io class=theme-link rel="external nofollow noopener noreferrer" target=_blank>Hexo</a> 强力驱动 v3.9.0</div><span class=post-meta-divider>|</span><div class=theme-info>主题 – <a href=https://theme-next.org class=theme-link rel="external nofollow noopener noreferrer" target=_blank>NexT.Gemini</a> v7.4.0</div><div class=busuanzi-count><script async src=https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><span class=post-meta-item-icon><i class="fa fa-user"></i></span> <span class=site-uv title=总访客量><span class=busuanzi-value id=busuanzi_value_site_uv></span>人访问</span> <span class=post-meta-divider>|</span> <span class=post-meta-item-icon><i class="fa fa-eye"></i></span> <span class=site-pv title=总访问量><span class=busuanzi-value id=busuanzi_value_site_pv></span>次访问</span></div></div></footer></div><script color=255,0,0 opacity=0.5 zindex=-1 count=99 src=//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js></script><script src=//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js></script><script src=//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js></script><script src=//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js></script><script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script><script src="/js/schemes/pisces.js?v=7.4.0"></script><script src="/js/next-boot.js?v=7.4.0"></script><script>
+	</script>
+
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+	  
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决"><span class="nav-text">解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另："><span class="nav-text">另：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新"><span class="nav-text">更新</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="kkm">
+  <p class="site-author-name" itemprop="name">kkm</p>
+  <div class="site-description" itemprop="description">嗨！</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/kuke-z" title="GitHub &rarr; https://github.com/kuke-z" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://0vv0.in" title="http://0vv0.in" rel="external nofollow noopener noreferrer" target="_blank">L1ngFeng</a>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+	  
+    </div>
+	
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kkm</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Gemini</a> v7.4.0</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人访问
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次访问
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+    
+  
+  <script color="255,0,0" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+  <script>
     (function(){
       var bp = document.createElement('script');
       var curProtocol = window.location.protocol.split(':')[0];
@@ -77,7 +663,38 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(bp, s);
     })();
-  </script><script src="/js/local-search.js?v=7.4.0"></script><script>
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
 NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
   var GUEST = ['nick', 'mail', 'link'];
   var guest = 'nick,mail,link';
@@ -99,4 +716,9 @@ NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
     path: location.pathname
   });
 }, window.Valine);
-</script></body></html><script type=text/javascript src=/js/clicklove.js></script>
+</script>
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/clicklove.js"></script>

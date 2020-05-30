@@ -58,19 +58,19 @@
   };
 </script>
 
-  <meta name="description" content="问题这几天跟老师要了上届学长写的代码参考学习，涉及到后端的蓝牙开发，用到了net.sf.bluecove包，这个本来没什么问题，自己慢慢学就好了，有问题的是学长用的2.1.1版本，官方只提供到了2.1.0版本(maven搜索引擎，官网)，而其中的一个关键API( RemoteDeviceHelper.readRSSI，用来连续获取蓝牙设备的RSSI值)，官方版本中并没有提供。">
-<meta name="keywords" content="Java,bluecove">
+  <meta name="description" content="目录 @Jsonformat注解 @Scheduled注解定时任务不执行 Java对象null判定位置">
+<meta name="keywords" content="Java,SpringBoot,Jsonformat,Scheduled">
 <meta property="og:type" content="article">
-<meta property="og:title" content="后端蓝牙开发包bluecove 2.1.2版本">
-<meta property="og:url" content="https://www.kkmblog.com/posts/10735/index.html">
+<meta property="og:title" content="记项目中一些细节性的问题">
+<meta property="og:url" content="https://www.kkmblog.com/posts/c7433268/index.html">
 <meta property="og:site_name" content="kkm&#39;s Blog">
-<meta property="og:description" content="问题这几天跟老师要了上届学长写的代码参考学习，涉及到后端的蓝牙开发，用到了net.sf.bluecove包，这个本来没什么问题，自己慢慢学就好了，有问题的是学长用的2.1.1版本，官方只提供到了2.1.0版本(maven搜索引擎，官网)，而其中的一个关键API( RemoteDeviceHelper.readRSSI，用来连续获取蓝牙设备的RSSI值)，官方版本中并没有提供。">
+<meta property="og:description" content="目录 @Jsonformat注解 @Scheduled注解定时任务不执行 Java对象null判定位置">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-16T19:01:07.721Z">
+<meta property="og:updated_time" content="2020-05-30T08:59:34.587Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="后端蓝牙开发包bluecove 2.1.2版本">
-<meta name="twitter:description" content="问题这几天跟老师要了上届学长写的代码参考学习，涉及到后端的蓝牙开发，用到了net.sf.bluecove包，这个本来没什么问题，自己慢慢学就好了，有问题的是学长用的2.1.1版本，官方只提供到了2.1.0版本(maven搜索引擎，官网)，而其中的一个关键API( RemoteDeviceHelper.readRSSI，用来连续获取蓝牙设备的RSSI值)，官方版本中并没有提供。">
-  <link rel="canonical" href="https://www.kkmblog.com/posts/10735/">
+<meta name="twitter:title" content="记项目中一些细节性的问题">
+<meta name="twitter:description" content="目录 @Jsonformat注解 @Scheduled注解定时任务不执行 Java对象null判定位置">
+  <link rel="canonical" href="https://www.kkmblog.com/posts/c7433268/">
 
 
 <script id="page-configurations">
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title>后端蓝牙开发包bluecove 2.1.2版本 | kkm's Blog</title>
+  <title>记项目中一些细节性的问题 | kkm's Blog</title>
   
 
 
@@ -269,7 +269,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="https://www.kkmblog.com/posts/10735/">
+    <link itemprop="mainEntityOfPage" href="https://www.kkmblog.com/posts/c7433268/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kkm">
@@ -281,7 +281,7 @@
       <meta itemprop="name" content="kkm's Blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">后端蓝牙开发包bluecove 2.1.2版本
+        <h1 class="post-title" itemprop="name headline">记项目中一些细节性的问题
 
           
         </h1>
@@ -297,7 +297,7 @@
                 
               
 
-              <time title="创建时间：2019-11-14 14:52:11" itemprop="dateCreated datePublished" datetime="2019-11-14T14:52:11+08:00">2019-11-14</time>
+              <time title="创建时间：2020-05-30 16:49:47" itemprop="dateCreated datePublished" datetime="2020-05-30T16:49:47+08:00">2020-05-30</time>
             </span>
           
             <span class="post-meta-item">
@@ -333,7 +333,7 @@
       
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/posts/10735/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/posts/10735/" itemprop="commentCount"></span></a>
+    <a title="valine" href="/posts/c7433268/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/posts/c7433268/" itemprop="commentCount"></span></a>
   </span>
   
   
@@ -347,21 +347,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>这几天跟老师要了上届学长写的代码参考学习，涉及到后端的蓝牙开发，用到了net.sf.bluecove包，这个本来没什么问题，自己慢慢学就好了，有问题的是学长用的2.1.1版本，官方只提供到了2.1.0版本(<a href="https://search.maven.org/search?q=bluecove" rel="external nofollow noopener noreferrer" target="_blank">maven搜索引擎</a>，<a href="http://bluecove.org/" rel="external nofollow noopener noreferrer" target="_blank">官网</a>)，而其中的一个关键API( RemoteDeviceHelper.readRSSI，用来连续获取蓝牙设备的RSSI值)，官方版本中并没有提供。<a id="more"></a></p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>试着换了几个官方版本都没有那个API，然后找资料，在这篇<a href="https://blog.csdn.net/old_me_mory/article/details/18962701" rel="external nofollow noopener noreferrer" target="_blank">博文</a>里看到了解决方法，然后顺着这条线索，终于找到了能用的版本2.1.2，也有<a href="http://snapshot.bluecove.org/distribution/download/2.1.1-SNAPSHOT/2.1.1-SNAPSHOT.62/" rel="external nofollow noopener noreferrer" target="_blank">2.1.1</a>版本，但无法下载。</p>
-<p>点此<a href="/downloadfiles/bluecove-2.1.2.jar">下载2.1.2版本</a>。</p>
-<p>另外复习下maven将本地jar包加入到本地仓库的命令</p>
-<blockquote>
-<p>mvn install:install-file  -Dfile = “D:\java\bluecove-2.1.2.jar” -DgroupId=net.sf.blucove -DartifactId= bluecove -Dversion = 2.1.2 -Dpackaging = jar</p>
-</blockquote>
-<p>参数：</p>
-<blockquote>
-<p>Dfile: 本地包的全路径，包括文件名</p>
-<p>DgroupId:  设置项目代码的包名 </p>
-<p>DartifactId: 设置项目名或模块名</p>
-<p>Dversion: 版本号</p>
-<p>Dpackaging: 文件类型</p>
-</blockquote>
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ol>
+<li>@Jsonformat注解</li>
+<li>@Scheduled注解定时任务不执行</li>
+<li>Java对象null判定位置</li>
+</ol>
+<a id="more"></a>
+
+<h1 id="Jsonformat注解"><a href="#Jsonformat注解" class="headerlink" title="@Jsonformat注解"></a>@Jsonformat注解</h1><p>使用@Jsonformat注解格式化输出日期时出现了一个小问题，以此记录：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//具体使用</span></span><br><span class="line"><span class="meta">@Jsonformat</span>(patten<span class="string">"YYYY/MM/DD HH:MM:SS"</span>, timezone=<span class="string">"GMT+8"</span>)</span><br><span class="line"><span class="keyword">private</span> Date date;</span><br></pre></td></tr></table></figure>
+
+<p>乍一看没问题，但是输出的日期不对,大概是这样</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//按理应该输出的</span></span><br><span class="line"><span class="number">2000</span>/<span class="number">03</span>/<span class="number">01</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span></span><br><span class="line"><span class="comment">//实际输出的(类似这样的，就不复现了)</span></span><br><span class="line"><span class="number">2000</span>/<span class="number">03</span>/<span class="number">167</span> <span class="number">02</span>:<span class="number">10</span>:<span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<p>在网上找了很久都没找到类似这样的错误，多是时区出问题的；</p>
+<p>具体解决：</p>
+<p>之前进了一个比较活跃的java电报群，就在里边问了问，有位大佬说看到过是格式控制的大小写不能改动，我去试了，确实，正确的格式应该是<code>yyyy/MM/dd HH:mm:ss</code>或者<code>yyyy-MM-dd HH:mm:ss</code>，又有一位大佬说这个jdk接口文档里有，jdk11的文档里没提到大小写相关的内容，但有对格式的要求，不知JDK1.8的文档里有无，然后又找了找Jackson 的<a href="https://github.com/FasterXML/jackson-annotations/wiki/Jackson-Annotations" rel="external nofollow noopener noreferrer" target="_blank">文档</a>，很难找，找到的也很简陋，也没找到。</p>
+<h1 id="Scheduled注解定时计划任务不执行"><a href="#Scheduled注解定时计划任务不执行" class="headerlink" title="@Scheduled注解定时计划任务不执行"></a>@Scheduled注解定时计划任务不执行</h1><p>项目需要一些简单的定时任务，就用了@Scheduled注解，然而怎么改，就是不执行，网上的各种配置都试过了，不论是新建配置类还是仅仅只用注解，可就是不执行定时任务，直到我把定时任务类所在的包加入了扫描。</p>
+<p>定时任务类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.gwg.bwtgame.scheduletask;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.gwg.bwtgame.dao.DailyTaskMapper;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.scheduling.annotation.Async;</span><br><span class="line"><span class="keyword">import</span> org.springframework.scheduling.annotation.EnableAsync;</span><br><span class="line"><span class="keyword">import</span> org.springframework.scheduling.annotation.EnableScheduling;</span><br><span class="line"><span class="keyword">import</span> org.springframework.scheduling.annotation.Scheduled;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@EnableScheduling</span></span><br><span class="line"><span class="meta">@EnableAsync</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScheduleTask</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> DailyTaskMapper dailyTaskMapper;</span><br><span class="line"></span><br><span class="line"><span class="comment">//  每天5点刷新每日任务</span></span><br><span class="line">    <span class="meta">@Async</span>  </span><br><span class="line">    <span class="meta">@Scheduled</span>(cron = <span class="string">"0 0 5 * * ?"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dailyTask</span><span class="params">()</span></span>&#123;</span><br><span class="line">        dailyTaskMapper.updateDailyTask();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>启动类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ComponentScan</span>(&#123;<span class="string">"com.gwg.bwtgame.scheduletask"</span>&#125;)</span><br><span class="line"><span class="meta">@EnableScheduling</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BwtgameApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(BwtgameApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>、</p>
+<h1 id="Java对象null判定位置"><a href="#Java对象null判定位置" class="headerlink" title="Java对象null判定位置"></a>Java对象null判定位置</h1><p>这个就非常基础了，但是没注意还是出错了，所以记录一下。关于对象值为null的判定一定要放在对对象进行操作前：如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFirstARads</span><span class="params">(<span class="keyword">int</span> bearId)</span> </span>&#123;</span><br><span class="line">    dailyTask=dailyTaskMapper.selectByPrimaryKey(bearId);</span><br><span class="line">    bear=bearMapper.selectByPrimaryKey(bearId);</span><br><span class="line">    <span class="keyword">if</span> (dailyTask.getWatchArAds()==<span class="number">0</span>&amp;&amp;dailyTask!=<span class="keyword">null</span>&amp;&amp;bear!=<span class="keyword">null</span>)&#123;<span class="comment">//报错这里有问题 空对象</span></span><br><span class="line">        <span class="comment">//具体操作</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一开始没反应过来：我也判定对象值不为null了啊，细看代码，出大问题了：</p>
+<p>按Java代码运行逻辑，同一行代码都是自左向右先后运行的，而我却将对象null值的判定放在了对象操作之后，所报错，所以争取的顺序是<code>dailyTask!=null&amp;&amp;bear!=null&amp;&amp;dailyTask.getWatchArAds()==0</code>或<code>bear!=null&amp;&amp;dailyTask!=null&amp;&amp;dailyTask.getWatchArAds()==0</code></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>看上边出现的问题，还是一些比较基础性、细节性的的问题，正所谓基础不牢，地动山摇；当然也不是没有其他问题，只是其他问题都百度解决了，只剩下这些基础性的、百度上没有的，仅此记录一下。</p>
 
     </div>
 
@@ -378,7 +393,7 @@
     <strong>本文作者： </strong>kkm</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.kkmblog.com/posts/10735/" title="后端蓝牙开发包bluecove 2.1.2版本">https://www.kkmblog.com/posts/10735/</a>
+    <a href="https://www.kkmblog.com/posts/c7433268/" title="记项目中一些细节性的问题">https://www.kkmblog.com/posts/c7433268/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noopener noreferrer" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -395,7 +410,11 @@
             
               <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
             
-              <a href="/tags/bluecove/" rel="tag"><i class="fa fa-tag"></i> bluecove</a>
+              <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-tag"></i> SpringBoot</a>
+            
+              <a href="/tags/Jsonformat/" rel="tag"><i class="fa fa-tag"></i> Jsonformat</a>
+            
+              <a href="/tags/Scheduled/" rel="tag"><i class="fa fa-tag"></i> Scheduled</a>
             
           </div>
         
@@ -405,8 +424,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/posts/18232/" rel="next" title="后端与移动端对接遇到的问题">
-                  <i class="fa fa-chevron-left"></i> 后端与移动端对接遇到的问题
+                <a href="/posts/25308/" rel="next" title="SpringBoot + mybatis + redis 整合遇到的坑">
+                  <i class="fa fa-chevron-left"></i> SpringBoot + mybatis + redis 整合遇到的坑
                 </a>
               
             </div>
@@ -414,10 +433,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/posts/25308/" rel="prev" title="SpringBoot + mybatis + redis 整合遇到的坑">
-                  SpringBoot + mybatis + redis 整合遇到的坑 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -476,7 +491,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决"><span class="nav-text">解决</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jsonformat注解"><span class="nav-text">@Jsonformat注解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scheduled注解定时计划任务不执行"><span class="nav-text">@Scheduled注解定时计划任务不执行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java对象null判定位置"><span class="nav-text">Java对象null判定位置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
